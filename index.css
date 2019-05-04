@@ -8,7 +8,7 @@ div {
 }
 
 .wrapper {
-    background: url(../../public/bg.jpg) bottom right no-repeat;
+    background: url(assets/bg.jpg) bottom right no-repeat;
     background-size: cover;
     background-attachment: fixed;
     position: absolute;
