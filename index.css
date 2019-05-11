@@ -8,7 +8,7 @@ div {
 }
 
 .wrapper {
-    background: url(assets/bg.jpg) bottom right no-repeat;
+    background: url(assets/bg.jpg) bottom center no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     background-attachment: fixed;
@@ -92,10 +92,10 @@ div {
     color: #f5f5f5;
     font-family: 'Space Mono', monospace;
     font-size: 100px;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .05em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    overflow: hidden;
+    border-right: .05em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
     animation: 
         typing 6s steps(12, end) infinite,
         blink-caret .5s step-end infinite;
