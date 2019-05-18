@@ -140,8 +140,8 @@ div {
 
 .footer li a {
     font-size: 32px;
-    color: rgba(143, 143, 143, 0.7);
-    opacity: 0.5;
+    color: rgba(175, 175, 175, 0.7);
+    opacity: 0.7;
     transition: color 0.2s ease-in-out; 
     -webkit-transition: color 0.2s ease-in-out;
 }
