@@ -202,3 +202,19 @@ div {
         font-size: 0.17em;
     }
 }
+
+/* Vertical */
+@media only screen and (max-height: 400px) {
+    /* .navbar {
+        right: 20px;
+        justify-content: flex-end;
+    } */
+
+    .title-container {
+        font-size: 60px;
+    }
+
+    .logo {
+        width: auto;
+    }
+}
