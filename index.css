@@ -170,3 +170,35 @@ div {
         font-size: 0.25em;
     }
 }
+
+/* Mobile */
+@media only screen and (max-width: 420px) {
+    .navbar li {
+        margin: 0 1.1em;
+    }
+
+    .navbar li a {
+        font-size: 18px;
+    }
+
+    .title-container {
+        font-size: 120px;
+    }
+
+    .logo {
+        width: auto;
+    }
+
+    .logo h1::before {
+        content: "{U}";
+    }
+
+    .logo h1 {
+        border-right: none;
+        animation: none;
+    }
+
+    .tagline {
+        font-size: 0.17em;
+    }
+}
