@@ -206,7 +206,7 @@ div {
 /* Vertical */
 @media only screen and (max-height: 400px) {
     .navbar {
-        top: 0;
+        margin: 10px 0 0;
     }
 
     .title-container {
