@@ -97,7 +97,7 @@ div {
     font-family: 'Space Mono', monospace;
     font-size: 1em;
     overflow: hidden;
-    border-right: .05em solid orange;
+    border-right: .05em solid rgb(255, 165, 0);
     white-space: nowrap;
     margin: 0 auto;
     animation: 
@@ -117,7 +117,7 @@ div {
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: orange; }
+    50% { border-color: rgb(255, 165, 0); }
 }
 
 .tagline {
