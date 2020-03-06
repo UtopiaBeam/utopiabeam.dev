@@ -5,9 +5,13 @@
   "version": "0.1.0",
   "author": "UtopiaBeam <utopiabeam@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@types/rebass": "^4.0.4",
     "dotenv": "^8.2.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
+    "gatsby-plugin-emotion": "^4.1.23",
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-netlify": "^2.1.33",
     "gatsby-plugin-netlify-cache": "^1.2.0",
@@ -34,6 +38,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
+    "rebass": "^4.0.7",
     "typography": "^0.16.19"
   },
   "devDependencies": {
