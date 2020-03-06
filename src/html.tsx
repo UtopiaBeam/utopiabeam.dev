@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 
 interface Props {
-  htmlAttributes: object;
-  headComponents: object[];
-  bodyAttributes: object;
-  preBodyComponents: object[];
-  body: string;
-  postBodyComponents: object[];
+  htmlAttributes: object
+  headComponents: object[]
+  bodyAttributes: object
+  preBodyComponents: object[]
+  body: string
+  postBodyComponents: object[]
 }
 
 export default (props: Props) => {
@@ -17,14 +17,17 @@ export default (props: Props) => {
     preBodyComponents,
     body,
     postBodyComponents,
-  } = props;
+  } = props
 
   return (
     <html lang="en" {...htmlAttributes}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
         <link
           rel="canonical"
           href={
@@ -41,16 +44,21 @@ export default (props: Props) => {
       </head>
       <body {...bodyAttributes}>
         <noscript>
-          For full functionality of this site it is necessary to enable JavaScript. Here are the
+          For full functionality of this site it is necessary to enable
+          JavaScript. Here are the
           <a href="https://www.enable-javascript.com/">
             instructions how to enable JavaScript in your web browser
           </a>
           .
         </noscript>
         {preBodyComponents}
-        <div key="body" id="___gatsby" dangerouslySetInnerHTML={{ __html: body }} />
+        <div
+          key="body"
+          id="___gatsby"
+          dangerouslySetInnerHTML={{ __html: body }}
+        />
         {postBodyComponents}
       </body>
     </html>
-  );
-};
+  )
+}
