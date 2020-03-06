@@ -1,88 +1,143 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+interface Props {
+  title?: string
+  description?: string
+  banner?: string
+  slug?: string
+  date?: string
+}
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+export default (props: Props) => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+          siteUrl
+          fbApp
         }
       }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
-
+    }
+  `)
+  const siteMetadata = data.site.siteMetadata
+  const {
+    title,
+    description = siteMetadata.description,
+    banner = '/bg.jpg',
+    slug,
+    date,
+  } = props
+  const pageTitle = title
+    ? `${title} | ${siteMetadata.title}`
+    : siteMetadata.title
+  const meta = [
+    {
+      name: 'name',
+      content: pageTitle,
+    },
+    {
+      name: 'description',
+      content: description,
+    },
+    {
+      name: 'robots',
+      content: 'index, follow',
+    },
+    {
+      name: 'author',
+      content: siteMetadata.author,
+    },
+    {
+      name: 'image',
+      content: `${siteMetadata.siteUrl}${banner}`,
+    },
+    {
+      name: 'theme-color',
+      content: '#ffa500',
+    },
+    {
+      name: 'msapplication-navbutton-color',
+      content: '#ffa500',
+    },
+    {
+      name: 'apple-mobile-web-app-capable',
+      content: 'yes',
+    },
+    {
+      name: 'apple-mobile-web-app-status-bar-style',
+      content: '#ffa500',
+    },
+    {
+      property: 'og:url',
+      content: slug ? `${siteMetadata.siteUrl}${slug}` : siteMetadata.siteUrl,
+    },
+    {
+      property: 'og:type',
+      content: 'article',
+    },
+    {
+      property: 'og:locale',
+      content: 'th_TH',
+    },
+    {
+      property: 'og:locale:alternate',
+      content: 'en_US',
+    },
+    {
+      property: 'og:title',
+      content: pageTitle,
+    },
+    {
+      name: 'og:description',
+      content: description,
+    },
+    {
+      property: 'og:image',
+      content: `${siteMetadata.siteUrl}${banner}`,
+    },
+    {
+      property: 'og:image:secure_url',
+      content: `${siteMetadata.siteUrl}${banner}`,
+    },
+    {
+      property: 'og:image:alt',
+      content: 'banner',
+    },
+    {
+      property: 'fb:app_id',
+      content: siteMetadata.fbApp,
+    },
+    {
+      property: 'article:author',
+      content: 'https://www.facebook.com/natchapolsrisang',
+    },
+  ]
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <Helmet title={pageTitle} meta={meta}>
+      <script type="application/application/ld+json">
+        {`
+          {
+            "@context": "http://schema.org/",
+            "@type" : "Article",
+            "mainEntityOfPage" : {
+              "@type" : "Webpage",
+              "@id" : "https://arnondora.in.th"
+            }
+            "author" : {
+              "@type" : "Person",
+              "name" : "${siteMetadata.author}"
+            },
+            "image" : "${siteMetadata.siteUrl}${banner}",
+            "headline" : "${pageTitle}",
+            "datePublished" : "${date}",
+            "description" : "${description}"
+          }`}
+      </script>
+    </Helmet>
   )
 }
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
-
-export default SEO
