@@ -1,35 +1,108 @@
+const siteUrls = {
+  production: "https://utopiabeam.dev",
+  staging: "https://staging.utopiabeam.dev",
+  development: "localhost:8080",
+}
+
+require("dotenv").config({ path: `.env` })
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `UtopiaBeam`,
+    description: `A developer in a coconut shell`,
+    author: `Natchapol Srisang`,
+    siteUrl: siteUrls[process.env.NODE_ENV],
+    fbUrl: "https://www.facebook.com/natchapolsrisang",
+    fbApp: "100001227099580",
+    githubUrl: "https://github.com/UtopiaBeam",
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1920,
+              linkImagesToOriginal: false,
+              quality: 90,
+              withWebp: true,
+            },
+          },
+          `gatsby-remark-copy-linked-files`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              showLineNumbers: false,
+              noInlineHighlight: true,
+            },
+          },
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              strict: `ignore`,
+            },
+          },
+          `gatsby-remark-embed-video`,
+          `gatsby-remark-responsive-iframe`,
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        excludes: ["/page/*", "/tags/**/*"],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `UtopiaBeam`,
+        short_name: `UtopiaBeam`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `assets/logo.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-typescript`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify-cache`,
   ],
 }
