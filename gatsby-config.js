@@ -1,10 +1,10 @@
 const siteUrls = {
-  production: "https://utopiabeam.dev",
-  staging: "https://staging.utopiabeam.dev",
-  development: "localhost:8080",
+  production: 'https://utopiabeam.dev',
+  staging: 'https://staging.utopiabeam.dev',
+  development: 'localhost:8080',
 }
 
-require("dotenv").config({ path: `.env` })
+require('dotenv').config({ path: `.env` })
 
 module.exports = {
   siteMetadata: {
@@ -12,9 +12,9 @@ module.exports = {
     description: `A developer in a coconut shell`,
     author: `Natchapol Srisang`,
     siteUrl: siteUrls[process.env.NODE_ENV],
-    fbUrl: "https://www.facebook.com/natchapolsrisang",
-    fbApp: "100001227099580",
-    githubUrl: "https://github.com/UtopiaBeam",
+    fbUrl: 'https://www.facebook.com/natchapolsrisang',
+    fbApp: '100001227099580',
+    githubUrl: 'https://github.com/UtopiaBeam',
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -26,13 +26,6 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
       },
     },
     {
@@ -59,7 +52,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
               inlineCodeMarker: null,
               showLineNumbers: false,
               noInlineHighlight: true,
@@ -86,7 +79,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        excludes: ["/page/*", "/tags/**/*"],
+        excludes: ['/page/*', '/tags/**/*'],
       },
     },
     {
