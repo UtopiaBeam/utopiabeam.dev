@@ -1,7 +1,36 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const { resolve } = require("path")
 
-// You can delete this file if you're not using it
+const CARD_PER_PAGE = 6
+const templateDir = "src/templates/"
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  const { data } = await graphql(`
+    {
+      site {
+        siteMetadata {
+          author
+        }
+      }
+      allContentfulPost(sort: { fields: createdAt, order: DESC }) {
+        nodes {
+          slug
+          featured
+        }
+      }
+    }
+  `)
+
+  const { site, allContentfulPost } = data
+  allContentfulPost.nodes.forEach(post => {
+    createPage({
+      path: post.slug,
+      component: resolve(templateDir, "Post.tsx"),
+      context: {
+        slug: post.slug,
+        author: site.siteMetadata.author,
+      },
+    })
+  })
+}
