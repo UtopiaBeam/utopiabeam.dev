@@ -1,4 +1,4 @@
-import Typography from 'typography';
+import Typography from 'typography'
 
 const typography = new Typography({
   baseFontSize: '20px',
@@ -31,7 +31,7 @@ const typography = new Typography({
       styles: ['400', '600'],
     },
   ],
-});
+})
 
-export default typography;
-export const { scale, rhythm, options } = typography;
+export default typography
+export const { scale, rhythm, options } = typography
