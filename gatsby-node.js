@@ -36,4 +36,18 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  const postPageNum = Math.ceil(posts.length / CARD_PER_PAGE)
+  for (let i = 0; i < postPageNum; i++) {
+    createPage({
+      path: i === 0 ? '/blog' : `/blog/${i + 1}`,
+      component: resolve(templateDir, 'PostList.tsx'),
+      context: {
+        pageNum: postPageNum,
+        currentPage: i + 1,
+        skip: i * CARD_PER_PAGE,
+        limit: CARD_PER_PAGE,
+      },
+    })
+  }
 }
