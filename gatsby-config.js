@@ -12,9 +12,10 @@ module.exports = {
     description: `A developer in a coconut shell`,
     author: `Natchapol Srisang`,
     siteUrl: siteUrls[process.env.NODE_ENV],
-    fbUrl: 'https://www.facebook.com/natchapolsrisang',
     fbApp: '100001227099580',
+    fbUrl: 'https://www.facebook.com/natchapolsrisang',
     githubUrl: 'https://github.com/UtopiaBeam',
+    linkedInUrl: 'https://www.linkedin.com/in/natchapol-srisang-3b723b16a',
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -67,6 +68,13 @@ module.exports = {
           `gatsby-remark-embed-video`,
           `gatsby-remark-responsive-iframe`,
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        sourceMap: true,
+        cssPropOptimization: true,
       },
     },
     {
