@@ -8,6 +8,7 @@ import {
   faFacebook,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons'
+import Logo from './Logo'
 
 interface Props {
   children?: ReactNode
@@ -22,7 +23,7 @@ const NavText = styled(Text)`
   font-weight: 600;
 `
 
-const Btn = styled.div`
+const Button = styled.div`
   color: rgba(18, 18, 18, 0.7);
   transition: color 0.1s ease-in-out;
 
@@ -65,11 +66,11 @@ export default ({ children }: Props) => {
     },
   ]
 
-  const navTabs = tabs.map(tab => (
-    <NavLink href={tab.href} px={[3, 4]} fontSize={[14, 15]}>
-      <Btn>
+  const navTabs = tabs.map((tab, i) => (
+    <NavLink key={`tab/${i}`} href={tab.href} px={[3, 4]} fontSize={[14, 15]}>
+      <Button>
         <NavText>{tab.name.toUpperCase()}</NavText>
-      </Btn>
+      </Button>
     </NavLink>
   ))
 
@@ -88,12 +89,12 @@ export default ({ children }: Props) => {
     },
   ]
 
-  const socialBtns = socialLinks.map(link => (
-    <Box px={3}>
+  const socialButtons = socialLinks.map((link, i) => (
+    <Box key={`social_${i}`} px={3}>
       <a href={link.href} target="_blank">
-        <Btn>
+        <Button>
           <FontAwesomeIcon icon={link.icon} size="lg" />
-        </Btn>
+        </Button>
       </a>
     </Box>
   ))
@@ -101,9 +102,10 @@ export default ({ children }: Props) => {
   return (
     <>
       <NavFlex alignItems="center" py={3}>
+        <NavLink href='/'><Logo sm={true} /></NavLink>
         {navTabs}
         <Box mx="auto" />
-        {socialBtns}
+        {socialButtons}
       </NavFlex>
       {children}
     </>
