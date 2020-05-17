@@ -4,7 +4,9 @@ const siteUrls = {
   development: 'localhost:8080',
 }
 
-require('dotenv').config({ path: `.env` })
+if (process.env.NODE_ENV === 'development') {
+  require('dotenv').config({ path: `.env` })
+}
 
 module.exports = {
   siteMetadata: {
