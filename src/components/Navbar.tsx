@@ -24,20 +24,16 @@ const NavText = styled(Text)`
 `
 
 const Button = styled.div`
-  color: rgba(18, 18, 18, 0.7);
+  color: rgba(250, 250, 250, 0.7);
   transition: color 0.1s ease-in-out;
 
   &:hover {
     color: rgba(255, 165, 0, 0.8);
   }
-
-  @media (prefers-color-scheme: dark) {
-    color: rgba(250, 250, 250, 0.7);
-  }
 `
 
 const NavFlex = styled(Flex)`
-  background: transparent;
+  background-color: rgb(18, 18, 18);
 `
 
 export default ({ children }: Props) => {
@@ -102,7 +98,9 @@ export default ({ children }: Props) => {
   return (
     <>
       <NavFlex alignItems="center" py={3}>
-        <NavLink href='/'><Logo sm={true} /></NavLink>
+        <NavLink href="/">
+          <Logo sm={true} />
+        </NavLink>
         {navTabs}
         <Box mx="auto" />
         {socialButtons}
