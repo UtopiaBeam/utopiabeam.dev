@@ -25,7 +25,7 @@ const NavText = styled(Text)`
 
 const Button = styled.div`
   color: rgba(250, 250, 250, 0.7);
-  transition: color 0.1s ease-in-out;
+  transition: color 0.15s ease-in-out;
 
   &:hover {
     color: rgba(255, 165, 0, 0.8);
