@@ -16,7 +16,6 @@ exports.createPages = async ({ graphql, actions }) => {
       allContentfulPost(sort: { fields: createdAt, order: DESC }) {
         posts: nodes {
           slug
-          featured
         }
       }
     }
