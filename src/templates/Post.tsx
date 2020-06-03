@@ -31,6 +31,10 @@ const GlobalStyles = () => (
         @media (prefers-color-scheme: dark) {
           color: rgba(230, 230, 230);
         }
+        & > img {
+          display: block;
+          margin: 0 auto;
+        }
       }
       h1 {
         @media (prefers-color-scheme: dark) {
