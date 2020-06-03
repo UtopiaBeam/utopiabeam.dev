@@ -6,6 +6,7 @@ import { Flex, Box, Heading } from 'rebass'
 import { Global, css } from '@emotion/core'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
+import { getDateString } from '../utils/functions'
 
 interface Props {
   pageContext: {
@@ -121,6 +122,21 @@ const Title = styled(props => (
   }
 `
 
+const CreatedAt = styled(props => (
+  <Heading
+    {...props}
+    fontFamily="Kanit, sans-serif"
+    fontWeight={400}
+    fontSize={[16, 17, 18]}
+    color="rgba(40, 40, 40, 0.5)"
+    pb={4}
+  />
+))`
+  @media (prefers-color-scheme: dark) {
+    color: rgba(245, 245, 245, 0.5);
+  }
+`
+
 export default ({ data: { post } }: Props) => {
   return (
     <>
@@ -135,6 +151,7 @@ export default ({ data: { post } }: Props) => {
       <Flex justifyContent="center">
         <Box width={[4 / 5, 3 / 4, 1 / 2]} py={4}>
           <Title>{post.title}</Title>
+          <CreatedAt>{getDateString(post.createdAt)}</CreatedAt>
           <Img fluid={post.banner.fluid} alt="banner" />
           <Box py={4}>
             <div
