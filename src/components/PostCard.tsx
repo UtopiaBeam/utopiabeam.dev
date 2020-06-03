@@ -67,7 +67,7 @@ const PostDesc = styled(props => (
 
 export default (props: Post) => {
   return (
-    <>
+    <Box width={[1, 1 / 2, 1 / 2]}>
       <Global
         styles={css`
           a {
@@ -75,7 +75,7 @@ export default (props: Post) => {
           }
         `}
       />
-      <Box py={3} px={[2, 3]} width={[1, 1 / 2, 1 / 2]} height="100%">
+      <Box py={3} px={[2, 3]} height="100%">
         <Link href={`blog/${props.slug}`}>
           <PostCard height="100%">
             <Banner fluid={props.banner.fluid} />
@@ -87,6 +87,6 @@ export default (props: Post) => {
           </PostCard>
         </Link>
       </Box>
-    </>
+    </Box>
   )
 }
