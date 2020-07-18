@@ -19,6 +19,7 @@ export default ({ text }: Props) => {
         fontSize: [13],
         fontFamily: 'Kanit, sans-serif',
         fontWeight: 400,
+        letterSpacing: 0.5
       }}
     >
       {text.toLocaleUpperCase()}
