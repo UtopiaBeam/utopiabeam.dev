@@ -30,7 +30,7 @@ const PostCard = styled(Card)`
 const PostTitle = styled(props => (
   <Heading
     {...props}
-    fontSize={[22, 24, 26, 28]}
+    fontSize={[24, 26, 28, 30]}
     fontFamily="Kanit, sans-serif"
     fontWeight={500}
     py={3}
@@ -76,12 +76,12 @@ export default (props: Post) => {
         `}
       />
       <Box py={3} px={[2, 3]} height="100%">
-        <Link href={`blog/${props.slug}`}>
+        <Link href={`/blog/${props.slug}`}>
           <PostCard height="100%">
             <Banner fluid={props.banner.fluid} />
             <Box p={[2, 3]}>
               <PostTitle>{props.title}</PostTitle>
-              <PostDate>{getDateString(props.createdAt)}</PostDate>
+              <PostDate>{getDateString(props.updatedAt)}</PostDate>
               <PostDesc>{props.description}</PostDesc>
             </Box>
           </PostCard>
