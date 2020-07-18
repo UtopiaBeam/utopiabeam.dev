@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions }) => {
           author
         }
       }
-      allContentfulPost(sort: { fields: createdAt, order: DESC }) {
+      allContentfulPost(sort: { fields: updatedAt, order: DESC }) {
         posts: nodes {
           slug
         }
@@ -36,13 +36,13 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const postPageNum = Math.ceil(posts.length / CARD_PER_PAGE)
-  for (let i = 0; i < postPageNum; i++) {
+  const totalPostPages = Math.ceil(posts.length / CARD_PER_PAGE)
+  for (let i = 0; i < totalPostPages; i++) {
     createPage({
       path: i === 0 ? '/blog' : `/blog/${i + 1}`,
       component: resolve(templateDir, 'PostList.tsx'),
       context: {
-        pageNum: postPageNum,
+        totalPages: totalPostPages,
         currentPage: i + 1,
         skip: i * CARD_PER_PAGE,
         limit: CARD_PER_PAGE,
