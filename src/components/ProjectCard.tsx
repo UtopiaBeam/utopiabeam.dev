@@ -56,7 +56,7 @@ export default (props: Project) => {
         `}
       />
       <Box py={3} px={[2, 3]} height="100%">
-        <Link href={props.url}>
+        <Link href={props.url} target="_blank">
           <ProjectCard height="100%">
             <Box p={[2, 3]}>
               <ProjectName>{props.name}</ProjectName>
