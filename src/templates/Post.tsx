@@ -7,6 +7,7 @@ import { Global, css } from '@emotion/core'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
 import { getDateString } from '../utils/functions'
+import Chip from '../components/Chip'
 
 interface Props {
   pageContext: {
@@ -114,7 +115,7 @@ const Title = styled(props => (
     fontFamily="Kanit, sans-serif"
     fontWeight={700}
     fontSize={[36, 40, 44]}
-    pb={3}
+    pb={2}
   />
 ))`
   @media (prefers-color-scheme: dark) {
@@ -122,7 +123,7 @@ const Title = styled(props => (
   }
 `
 
-const CreatedAt = styled(props => (
+const UpdatedAt = styled(props => (
   <Heading
     {...props}
     fontFamily="Kanit, sans-serif"
@@ -138,6 +139,8 @@ const CreatedAt = styled(props => (
 `
 
 export default ({ data: { post } }: Props) => {
+  const tags = post.tags.map(tag => <Chip text={tag.name} />)
+
   return (
     <>
       <GlobalStyles />
@@ -145,13 +148,14 @@ export default ({ data: { post } }: Props) => {
         title={post.title}
         slug={post.slug}
         description={post.description}
-        date={post.createdAt}
+        date={post.updatedAt}
         banner={post.banner.fluid.src}
       />
       <Flex justifyContent="center">
         <Box width={[4 / 5, 3 / 4, 1 / 2]} py={4}>
           <Title>{post.title}</Title>
-          <CreatedAt>{getDateString(post.createdAt)}</CreatedAt>
+          <Box mb={3}>{tags}</Box>
+          <UpdatedAt>โพสเมื่อ {getDateString(post.updatedAt)}</UpdatedAt>
           <Img fluid={post.banner.fluid} alt="banner" />
           <Box py={4}>
             <div
@@ -171,7 +175,7 @@ export const pageQuery = graphql`
     post: contentfulPost(slug: { eq: $slug }) {
       title
       description
-      createdAt(formatString: "DD MMM YYYY")
+      updatedAt(formatString: "DD MMM YYYY")
       content {
         childMarkdownRemark {
           html
