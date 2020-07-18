@@ -94,7 +94,7 @@ export default () => {
           <Title>Latest Blogs</Title>
           <Flex flexWrap="wrap">{postCards}</Flex>
         </Box>
-        <Box width={[20 / 24, 19 / 24, 18 / 24, 17 / 24]} py={4}>
+        <Box width={[20 / 24, 19 / 24, 18 / 24, 17 / 24]} pb={4}>
           <Title>Current Projects</Title>
           <Flex flexWrap="wrap">{projectCards}</Flex>
         </Box>
