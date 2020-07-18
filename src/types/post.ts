@@ -5,7 +5,7 @@ export interface Post {
   slug: string
   featured: boolean
   description: string
-  createdAt: string
+  updatedAt: string
   banner: {
     fluid: FluidObject
   }
