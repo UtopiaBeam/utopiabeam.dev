@@ -45,7 +45,7 @@ export default ({ pageContext, data }: Props) => {
     <>
       <SEO title="Blog" />
       <Flex justifyContent="center">
-        <Box width={[20 / 24, 19 / 24, 18 / 24, 17 / 24]} pt={4}>
+        <Box width={[20 / 24, 19 / 24, 18 / 24, 17 / 24]} py={4}>
           <Title>Blog</Title>
           <Flex flexWrap="wrap">{postCards}</Flex>
           <PageNav
