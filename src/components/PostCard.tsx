@@ -5,6 +5,7 @@ import Img from 'gatsby-image'
 import { Box, Card, Link, Text, Heading } from 'rebass'
 import { Global, css } from '@emotion/core'
 import { getDateString } from '../utils/functions'
+import Chip from '../components/Chip'
 
 const Banner = styled(Img)`
   border-radius: 5px 5px 0 0;
@@ -66,6 +67,8 @@ const PostDesc = styled(props => (
 `
 
 export default (props: Post) => {
+  const tags = props.tags.map(tag => <Chip text={tag.name} />)
+
   return (
     <Box width={[1, 1 / 2, 1 / 2]}>
       <Global
@@ -81,6 +84,7 @@ export default (props: Post) => {
             <Banner fluid={props.banner.fluid} />
             <Box p={[2, 3]}>
               <PostTitle>{props.title}</PostTitle>
+              <Box mb={3}>{tags}</Box>
               <PostDate>{getDateString(props.updatedAt)}</PostDate>
               <PostDesc>{props.description}</PostDesc>
             </Box>

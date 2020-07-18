@@ -71,6 +71,9 @@ export const pageQuery = graphql`
         slug
         description
         updatedAt(formatString: "DD MMM YYYY")
+        tags {
+          name
+        }
         banner {
           fluid(quality: 80, maxWidth: 1000) {
             aspectRatio
