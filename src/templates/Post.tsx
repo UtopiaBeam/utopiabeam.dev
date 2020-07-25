@@ -38,7 +38,12 @@ const GlobalStyles = () => (
           margin: 0 auto;
         }
       }
-      h1 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         @media (prefers-color-scheme: dark) {
           color: rgba(230, 230, 230);
         }
