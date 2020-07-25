@@ -69,7 +69,7 @@ export default () => {
       justifyContent="space-between"
       alignItems="center"
       backgroundColor="rgb(10, 10, 10)"
-      px={[2, 4, 6]}
+      px={[4, 6]}
       py={[3, 4]}
     >
       <NavText>
