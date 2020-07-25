@@ -205,14 +205,14 @@ export default ({ data }: Props) => {
                 pb={4}
                 pr={4}
               >{`<< ${previousPost.title}`}</PostLink>
-            ) : null}
+            ) : <div />}
             {nextPost ? (
               <PostLink
                 href={`/blog/${nextPost.slug}`}
                 pb={4}
                 pl={4}
               >{`${nextPost.title} >>`}</PostLink>
-            ) : null}
+            ) : <div />}
           </Flex>
         </Box>
       </Flex>
