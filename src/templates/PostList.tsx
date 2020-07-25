@@ -70,7 +70,7 @@ export const pageQuery = graphql`
         title
         slug
         description
-        updatedAt(formatString: "DD MMM YYYY")
+        updatedAt
         tags {
           name
         }
