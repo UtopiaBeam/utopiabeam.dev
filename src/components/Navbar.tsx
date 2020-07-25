@@ -33,7 +33,7 @@ const Button = styled.div`
 `
 
 const NavFlex = styled(Flex)`
-  background-color: rgb(18, 18, 18);
+  background-color: rgb(25, 25, 25);
 `
 
 export default ({ children }: Props) => {

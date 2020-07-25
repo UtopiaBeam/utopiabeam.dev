@@ -37,5 +37,5 @@ export default ({ currentPage, totalPages, pathPrefix }: Props) => {
     }
   )
 
-  return <Flex justifyContent="center" mt={2}>{pages}</Flex>
+  return <Flex justifyContent="center" mt={3}>{pages}</Flex>
 }
