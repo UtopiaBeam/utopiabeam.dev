@@ -56,10 +56,6 @@ export default ({ children }: Props) => {
       name: 'Blog',
       href: '/blog',
     },
-    {
-      name: 'About me',
-      href: '/me',
-    },
   ]
 
   const navTabs = tabs.map((tab, i) => (
