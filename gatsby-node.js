@@ -8,11 +8,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(`
     {
-      site {
-        siteMetadata {
-          author
-        }
-      }
       allContentfulPost(sort: { fields: updatedAt, order: DESC }) {
         posts: nodes {
           slug
@@ -22,16 +17,16 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   const {
-    site,
     allContentfulPost: { posts },
   } = data
-  posts.forEach(post => {
+  posts.forEach((post, i) => {
     createPage({
       path: `blog/${post.slug}`,
       component: resolve(templateDir, 'Post.tsx'),
       context: {
         slug: post.slug,
-        author: site.siteMetadata.author,
+        previousSlug: i < posts.length - 1 ? posts[i + 1].slug : '',
+        nextSlug: i > 0 ? posts[i - 1].slug : '',
       },
     })
   })
