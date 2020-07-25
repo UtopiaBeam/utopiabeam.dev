@@ -65,11 +65,12 @@ export default () => {
 
   return (
     <Flex
+      flexDirection={window.innerWidth <= 420 ? 'column' : 'row'}
       justifyContent="space-between"
       alignItems="center"
       backgroundColor="rgb(10, 10, 10)"
-      px={6}
-      py={4}
+      px={[2, 4, 6]}
+      py={[3, 4]}
     >
       <NavText>
         {siteMetadata.author} © {new Date().getFullYear()}
