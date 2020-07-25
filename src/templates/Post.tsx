@@ -171,7 +171,7 @@ export default ({ data: { post } }: Props) => {
 }
 
 export const pageQuery = graphql`
-  query postQuery($slug: String!) {
+  query postQuery($slug: String!, $previousSlug: String, $nextSlug: String) {
     post: contentfulPost(slug: { eq: $slug }) {
       title
       description
