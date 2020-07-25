@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(`
     {
-      allContentfulPost(sort: { fields: updatedAt, order: DESC }) {
+      allContentfulPost(sort: { fields: publishedAt, order: DESC }) {
         posts: nodes {
           slug
         }
