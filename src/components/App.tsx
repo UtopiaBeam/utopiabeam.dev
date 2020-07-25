@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import Navbar from './Navbar'
+import Footer from './Footer'
 import { css } from '@emotion/core'
 
 interface Props {
@@ -18,6 +19,7 @@ export default ({ children }: Props) => {
     >
       <Navbar />
       {children}
+      <Footer />
     </div>
   )
 }
