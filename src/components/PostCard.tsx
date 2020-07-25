@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import Img from 'gatsby-image'
 import { Box, Card, Link, Text, Heading } from 'rebass'
 import { Global, css } from '@emotion/core'
-import { getDateString } from '../utils/functions'
+import { getDateString } from '../utils'
 import Chip from '../components/Chip'
 
 const Banner = styled(Img)`

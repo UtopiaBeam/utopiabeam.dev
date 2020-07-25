@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Flex, Text, Link } from 'rebass'
 import styled from '@emotion/styled'
+import { useMobile } from '../utils'
 
 const NavText = (props: { children?: React.ReactNode }) => (
   <Text
@@ -38,6 +39,7 @@ export default () => {
       }
     }
   `)
+  const isMobile = useMobile()
 
   const socialLinks = [
     {
@@ -65,7 +67,7 @@ export default () => {
 
   return (
     <Flex
-      flexDirection={window.innerWidth <= 420 ? 'column' : 'row'}
+      flexDirection={isMobile ? 'column' : 'row'}
       justifyContent="space-between"
       alignItems="center"
       backgroundColor="rgb(10, 10, 10)"
