@@ -6,7 +6,7 @@ import { Flex, Box, Heading, Link } from 'rebass'
 import { Global, css } from '@emotion/core'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-import { getDateString } from '../utils/functions'
+import { getDateString, useMobile } from '../utils'
 import Chip from '../components/Chip'
 
 interface Props {
@@ -161,6 +161,7 @@ const PostLink = styled(Link)`
 export default ({ data }: Props) => {
   const { post, nextPost, previousPost } = data
   const tags = post.tags.map(tag => <Chip text={tag.name} />)
+  const isMobile = useMobile()
 
   return (
     <>
@@ -196,7 +197,7 @@ export default ({ data }: Props) => {
           />
           <Flex
             justifyContent="space-between"
-            flexDirection={window.innerWidth <= 420 ? 'column' : 'row'}
+            flexDirection={isMobile ? 'column' : 'row'}
           >
             {previousPost ? (
               <PostLink
