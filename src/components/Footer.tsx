@@ -1,17 +1,16 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Flex, Text, Link } from 'rebass'
+import { Flex, Text, Link, Box } from 'rebass'
 import styled from '@emotion/styled'
-import { useMobile } from '../utils'
 
-const NavText = (props: { children?: React.ReactNode }) => (
+const NavText = ({ children }) => (
   <Text
     fontFamily="Kanit, sans-serif"
     fontSize={[14, 15, 16]}
     fontWeight={300}
     color="rgba(250, 250, 250, 0.7)"
   >
-    {props.children}
+    {children}
   </Text>
 )
 
@@ -39,7 +38,6 @@ export default () => {
       }
     }
   `)
-  const isMobile = useMobile()
 
   const socialLinks = [
     {
@@ -58,26 +56,24 @@ export default () => {
 
   const socialComponents = socialLinks.map((link, i) => (
     <React.Fragment key={`footer_${i}`}>
+      {` · `}
       <NavLink href={link.href} target="_blank">
         {link.text}
       </NavLink>
-      {i < socialLinks.length - 1 ? ' · ' : null}
     </React.Fragment>
   ))
 
   return (
     <Flex
-      flexDirection={isMobile ? 'column' : 'row'}
-      justifyContent="space-between"
-      alignItems="center"
+      flexWrap="wrap"
+      justifyContent="center"
       backgroundColor="rgb(10, 10, 10)"
-      px={[4, 6]}
-      py={[3, 4]}
+      p={3}
     >
       <NavText>
         {siteMetadata.author} © {new Date().getFullYear()}
+        {socialComponents}
       </NavText>
-      <NavText>{socialComponents}</NavText>
     </Flex>
   )
 }
