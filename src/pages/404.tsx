@@ -46,7 +46,7 @@ export default () => {
           </TermText>
           <TermText>$ There's no way you gonna break it, trust me...</TermText>
           <TermText>
-            $ So why not just go <TermLink href="/">home</TermLink>?
+            $ So why don't just go <TermLink href="/">home</TermLink>?
           </TermText>
         </Box>
       </Term>
