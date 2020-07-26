@@ -2,11 +2,11 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Post } from '../types'
 import SEO from '../components/SEO'
-import { Flex, Box, Heading, Link } from 'rebass'
+import { Flex, Box, Heading, Link, Text } from 'rebass'
 import { Global, css } from '@emotion/core'
 import Img from 'gatsby-image'
 import styled from '@emotion/styled'
-import { getDateString, useMobile } from '../utils'
+import { getDateString } from '../utils'
 import Chip from '../components/Chip'
 
 interface Props {
@@ -161,7 +161,6 @@ const PostLink = styled(Link)`
 export default ({ data }: Props) => {
   const { post, nextPost, previousPost } = data
   const tags = post.tags.map(tag => <Chip text={tag.name} />)
-  const isMobile = useMobile()
 
   return (
     <>
@@ -195,24 +194,25 @@ export default ({ data }: Props) => {
               borderRight: 0,
             }}
           />
-          <Flex
-            justifyContent="space-between"
-            flexDirection={isMobile ? 'column' : 'row'}
-          >
+          <Flex flexWrap="wrap">
             {previousPost ? (
-              <PostLink
-                href={`/blog/${previousPost.slug}`}
-                pb={4}
-                pr={4}
-              >{`<< ${previousPost.title}`}</PostLink>
-            ) : <div />}
+              <Box width={[1, 1, 1 / 2]} pr={2} pb={4}>
+                <PostLink href={`/blog/${previousPost.slug}`}>
+                  <Text>{`<< ${previousPost.title}`}</Text>
+                </PostLink>
+              </Box>
+            ) : (
+              <Box width={[0, 0, 1 / 2]} />
+            )}
             {nextPost ? (
-              <PostLink
-                href={`/blog/${nextPost.slug}`}
-                pb={4}
-                pl={4}
-              >{`${nextPost.title} >>`}</PostLink>
-            ) : <div />}
+              <Box width={[1, 1, 1 / 2]} pl={2} pb={4}>
+                <PostLink href={`/blog/${nextPost.slug}`}>
+                  <Text textAlign="right">{`${nextPost.title} >>`}</Text>
+                </PostLink>
+              </Box>
+            ) : (
+              <Box width={[0, 0, 1 / 2]} />
+            )}
           </Flex>
         </Box>
       </Flex>
