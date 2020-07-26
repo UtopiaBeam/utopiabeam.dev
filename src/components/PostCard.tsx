@@ -82,7 +82,7 @@ export default (props: Post) => {
         <Link href={`/blog/${props.slug}`}>
           <PostCard height="100%">
             <Banner fluid={props.banner.fluid} />
-            <Box p={[2, 3]}>
+            <Box p={3}>
               <PostTitle>{props.title}</PostTitle>
               <Box mb={3}>{tags}</Box>
               <PostDate>{getDateString(props.updatedAt)}</PostDate>
