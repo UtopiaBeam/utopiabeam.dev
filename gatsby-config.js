@@ -89,7 +89,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        excludes: ['/page/*', '/tags/**/*'],
+        excludes: ['/blog/*'],
       },
     },
     {
@@ -101,7 +101,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `assets/logo.png`, // This path is relative to the root of the site.
+        icon: `assets/favicon.ico`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-typescript`,
