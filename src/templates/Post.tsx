@@ -132,7 +132,7 @@ const Title = styled(props => (
   }
 `
 
-const publishedAt = styled(props => (
+const PublishedAt = styled(props => (
   <Heading
     {...props}
     fontFamily="Kanit, sans-serif"
@@ -176,7 +176,7 @@ export default ({ data }: Props) => {
         <Box width={[4 / 5, 3 / 4, 1 / 2]} pt={4}>
           <Title>{post.title}</Title>
           <Box mb={3}>{tags}</Box>
-          <publishedAt>โพสเมื่อ {getDateString(post.publishedAt)}</publishedAt>
+          <PublishedAt>โพสเมื่อ {getDateString(post.publishedAt)}</PublishedAt>
           <Img fluid={post.banner.fluid} alt="banner" />
           <Box py={4}>
             <div
