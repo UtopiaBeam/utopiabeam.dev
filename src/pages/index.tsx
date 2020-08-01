@@ -50,12 +50,12 @@ export default () => {
           ...GatsbyImageSharpFluid
         }
       }
-      allContentfulPost(sort: { fields: updatedAt, order: DESC }, limit: 2) {
+      allContentfulPost(sort: { fields: publishedAt, order: DESC }, limit: 2) {
         nodes {
           title
           slug
           description
-          updatedAt(formatString: "DD MMM YYYY")
+          publishedAt
           tags {
             name
           }

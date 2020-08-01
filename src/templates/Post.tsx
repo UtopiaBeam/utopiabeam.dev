@@ -132,7 +132,7 @@ const Title = styled(props => (
   }
 `
 
-const UpdatedAt = styled(props => (
+const publishedAt = styled(props => (
   <Heading
     {...props}
     fontFamily="Kanit, sans-serif"
@@ -169,14 +169,14 @@ export default ({ data }: Props) => {
         title={post.title}
         slug={post.slug}
         description={post.description}
-        date={post.updatedAt}
+        date={post.publishedAt}
         banner={post.banner.fluid.src}
       />
       <Flex flexDirection="column" alignItems="center">
         <Box width={[4 / 5, 3 / 4, 1 / 2]} pt={4}>
           <Title>{post.title}</Title>
           <Box mb={3}>{tags}</Box>
-          <UpdatedAt>โพสเมื่อ {getDateString(post.updatedAt)}</UpdatedAt>
+          <publishedAt>โพสเมื่อ {getDateString(post.publishedAt)}</publishedAt>
           <Img fluid={post.banner.fluid} alt="banner" />
           <Box py={4}>
             <div
@@ -225,7 +225,7 @@ export const pageQuery = graphql`
     post: contentfulPost(slug: { eq: $slug }) {
       title
       description
-      updatedAt
+      publishedAt
       content {
         childMarkdownRemark {
           html

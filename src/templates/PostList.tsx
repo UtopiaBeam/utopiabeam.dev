@@ -62,7 +62,7 @@ export default ({ pageContext, data }: Props) => {
 export const pageQuery = graphql`
   query postListQuery($skip: Int!, $limit: Int!) {
     allContentfulPost(
-      sort: { fields: updatedAt, order: DESC }
+      sort: { fields: publishedAt, order: DESC }
       skip: $skip
       limit: $limit
     ) {
@@ -70,7 +70,7 @@ export const pageQuery = graphql`
         title
         slug
         description
-        updatedAt
+        publishedAt
         tags {
           name
         }

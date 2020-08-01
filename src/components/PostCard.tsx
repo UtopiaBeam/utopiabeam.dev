@@ -85,7 +85,7 @@ export default (props: Post) => {
             <Box p={3}>
               <PostTitle>{props.title}</PostTitle>
               <Box mb={3}>{tags}</Box>
-              <PostDate>{getDateString(props.updatedAt)}</PostDate>
+              <PostDate>{getDateString(props.publishedAt)}</PostDate>
               <PostDesc>{props.description}</PostDesc>
             </Box>
           </PostCard>
