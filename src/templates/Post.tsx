@@ -224,6 +224,7 @@ export const pageQuery = graphql`
   query postQuery($slug: String!, $previousSlug: String, $nextSlug: String) {
     post: contentfulPost(slug: { eq: $slug }) {
       title
+      slug
       description
       publishedAt
       content {
