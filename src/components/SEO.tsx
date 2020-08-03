@@ -74,7 +74,7 @@ export default (props: Props) => {
     },
     {
       property: 'og:url',
-      content: slug ? `${siteMetadata.siteUrl}${slug}` : siteMetadata.siteUrl,
+      content: slug ? `${siteMetadata.siteUrl}/blog/${slug}` : siteMetadata.siteUrl,
     },
     {
       property: 'og:type',
@@ -93,16 +93,16 @@ export default (props: Props) => {
       content: pageTitle,
     },
     {
-      name: 'og:description',
+      property: 'og:description',
       content: description,
     },
     {
       property: 'og:image',
-      content: `${siteMetadata.siteUrl}${banner}`,
+      content: banner,
     },
     {
       property: 'og:image:secure_url',
-      content: `${siteMetadata.siteUrl}${banner}`,
+      content: banner,
     },
     {
       property: 'og:image:alt',
