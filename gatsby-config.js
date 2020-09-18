@@ -20,6 +20,12 @@ module.exports = {
     linkedInUrl: 'https://www.linkedin.com/in/natchapol-srisang-3b723b16a',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env === 'production' ? "UA-139971583-3" : '',
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
