@@ -117,7 +117,7 @@ export default () => {
       <GlobalStyles />
       <SEO title="Me" slug="me" description="About myself" />
       <Flex flexDirection="column" alignItems="center">
-        <Box width={4 / 5} pt={4}>
+        <Box width={[4 / 5, 3 / 4, 1 / 2]} pt={4}>
           <div
             dangerouslySetInnerHTML={{
               __html: contentfulCv.content.childMarkdownRemark.html,
