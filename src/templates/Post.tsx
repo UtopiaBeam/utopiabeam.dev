@@ -198,7 +198,7 @@ export default ({ data }: Props) => {
             {previousPost ? (
               <Box width={[1, 1, 1 / 2]} pr={2} pb={4}>
                 <PostLink href={`/blog/${previousPost.slug}`}>
-                  <Text>{`<< ${previousPost.title}`}</Text>
+                  <Text>{`\u27f5 ${previousPost.title}`}</Text>
                 </PostLink>
               </Box>
             ) : (
@@ -207,7 +207,7 @@ export default ({ data }: Props) => {
             {nextPost ? (
               <Box width={[1, 1, 1 / 2]} pl={2} pb={4}>
                 <PostLink href={`/blog/${nextPost.slug}`}>
-                  <Text textAlign="right">{`${nextPost.title} >>`}</Text>
+                  <Text textAlign="right">{`${nextPost.title} \u27f6`}</Text>
                 </PostLink>
               </Box>
             ) : (
