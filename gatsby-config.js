@@ -21,7 +21,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gtag`,
       options: {
         trackingId: process.env === 'production' ? "UA-139971583-3" : '',
       },
