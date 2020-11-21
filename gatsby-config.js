@@ -23,7 +23,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
-        trackingId: process.env === 'production' ? "UA-139971583-3" : '',
+        trackingId: process.env.NODE_ENV === 'production' ? "UA-139971583-3" : '',
       },
     },
     `gatsby-transformer-sharp`,
