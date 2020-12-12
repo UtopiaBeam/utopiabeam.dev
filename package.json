@@ -1,79 +1,20 @@
 {
   "name": "utopiabeam.dev",
-  "private": true,
-  "description": "A blogger in a coconut shell",
   "version": "0.1.0",
-  "author": "UtopiaBeam <utopiabeam@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "@fortawesome/fontawesome-svg-core": "^1.2.27",
-    "@fortawesome/free-brands-svg-icons": "^5.12.1",
-    "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "@fortawesome/react-fontawesome": "^0.1.9",
-    "dotenv": "^8.2.0",
-    "gatsby": "^2.19.7",
-    "gatsby-background-image": "^0.10.2",
-    "gatsby-image": "^2.2.39",
-    "gatsby-plugin-emotion": "^4.1.23",
-    "gatsby-plugin-gtag": "^1.0.13",
-    "gatsby-plugin-manifest": "^2.2.39",
-    "gatsby-plugin-netlify": "^2.1.33",
-    "gatsby-plugin-netlify-cache": "^1.2.0",
-    "gatsby-plugin-offline": "^3.0.32",
-    "gatsby-plugin-react-helmet": "^3.1.21",
-    "gatsby-plugin-sharp": "^2.4.3",
-    "gatsby-plugin-sitemap": "^2.2.27",
-    "gatsby-plugin-typescript": "^2.1.27",
-    "gatsby-plugin-typography": "^2.3.22",
-    "gatsby-remark-copy-linked-files": "^2.1.37",
-    "gatsby-remark-embed-video": "^2.0.1",
-    "gatsby-remark-images": "^3.1.44",
-    "gatsby-remark-katex": "^3.1.24",
-    "gatsby-remark-prismjs": "^3.3.31",
-    "gatsby-remark-responsive-iframe": "^2.2.32",
-    "gatsby-source-contentful": "^2.1.86",
-    "gatsby-source-filesystem": "^2.1.48",
-    "gatsby-transformer-remark": "^2.6.53",
-    "gatsby-transformer-sharp": "^2.3.13",
-    "katex": "^0.11.1",
-    "prismjs": "^1.21.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "react-typography": "^0.16.19",
-    "rebass": "^4.0.7",
-    "typography": "^0.16.19"
+    "next": "10.0.3",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
-    "@types/node": "^13.7.4",
-    "@types/react": "^16.9.22",
-    "@types/react-dom": "^16.9.5",
-    "@types/react-helmet": "^5.0.15",
-    "@types/rebass": "^4.0.4",
-    "@types/typography": "^0.16.3",
-    "prettier": "^1.19.1",
-    "typescript": "^3.8.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "@types/node": "^14.14.12",
+    "@types/react": "^17.0.0",
+    "typescript": "^4.1.3"
   }
 }
