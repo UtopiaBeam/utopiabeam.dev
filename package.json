@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "fmt": "prettier -w '**/*.(ts|tsx)'"
   },
   "dependencies": {
     "next": "10.0.3",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@types/node": "^14.14.12",
     "@types/react": "^17.0.0",
+    "prettier": "^2.2.1",
     "typescript": "^4.1.3"
   }
 }
