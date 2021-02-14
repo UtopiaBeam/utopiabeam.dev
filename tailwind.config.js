@@ -8,12 +8,10 @@ module.exports = {
       colors: {
         terminal: '#00ff66',
       },
-      typography: {
-        fontFamily: {
-          sans: ['Sarabun', ...defaultTheme.fontFamily.sans],
-          header: ['Kanit', ...defaultTheme.fontFamily.sans],
-          mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
-        },
+      fontFamily: {
+        sans: ['Sarabun', ...defaultTheme.fontFamily.sans],
+        header: ['Noto Sans Thai', ...defaultTheme.fontFamily.sans],
+        mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
       },
     },
   },
