@@ -21,6 +21,8 @@ const SEO: React.FC<Props> = props => {
 
   return (
     <Head>
+      <title>{transformedTitle}</title>
+
       <meta charSet="utf-8" />
 
       <meta name="title" content={transformedTitle} />
