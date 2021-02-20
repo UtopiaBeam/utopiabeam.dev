@@ -10,8 +10,9 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Sarabun', ...defaultTheme.fontFamily.sans],
-        header: ['Noto Sans Thai', ...defaultTheme.fontFamily.sans],
-        mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
+        header: ['Athiti', ...defaultTheme.fontFamily.sans],
+        mono: ['"Fira Code"', ...defaultTheme.fontFamily.mono],
+        logo: ['"Space Mono"', ...defaultTheme.fontFamily.mono],
       },
     },
   },
