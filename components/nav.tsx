@@ -1,56 +1,29 @@
-import React from 'react'
 import Link from 'next/link'
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => ({
-  ...link,
-  key: `nav-link-${link.href}-${link.label}`,
-}))
+const Nav: React.FC = () => {
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
+  return (
+    <nav className="flex items-center p-3 bg-gray-200 dark:bg-grey">
+      <Link href="/">
+        <>
+          <h2 className="text-orange font-logo font-bold select-none">{'{'}</h2>
+          <h2 className="text-white font-logo font-bold select-none">
+            UtopiaBeam
+          </h2>
+          <h2 className="pr-6 text-orange font-logo font-bold select-none">
+            {'}'}
+          </h2>
+        </>
+      </Link>
+      <Link href="/blog">
+        <p className="px-4 font-mono uppercase dark:text-gray-200">Blog</p>
+      </Link>
+      <Link href="/me">
+        <p className="px-4 font-mono uppercase dark:text-gray-200">About me</p>
+      </Link>
+    </nav>
+  )
+}
 
 export default Nav
