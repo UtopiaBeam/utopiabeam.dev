@@ -8,7 +8,27 @@ export interface Post {
   title: string
   slug: string
   description: string
-  publishedAt: Date
+  sys: {
+    firstPublishedAt: string
+  }
   banner: Asset
   content: string
+  tagCollection: {
+    items: {
+      name: string
+    }
+  }
+}
+
+export interface CallApiVariables {
+  preview: boolean
+  [k: string]: unknown
+}
+
+export interface GetPostsFetchResult {
+  data: {
+    postCollection: {
+      items: Post[]
+    }
+  }
 }
