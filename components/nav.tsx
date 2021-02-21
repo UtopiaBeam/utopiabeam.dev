@@ -1,26 +1,22 @@
 import Link from 'next/link'
 
 const Nav: React.FC = () => {
-
-
   return (
-    <nav className="flex items-center p-3 bg-gray-200 dark:bg-grey">
+    <nav className="flex space-x-6 items-baseline p-3 bg-gray-200 dark:bg-darkgray border-b-2 border-darkgray dark:border-white border-opacity-10">
       <Link href="/">
-        <>
-          <h2 className="text-orange font-logo font-bold select-none">{'{'}</h2>
-          <h2 className="text-white font-logo font-bold select-none">
+        <div className="flex items-center pr-4">
+          <h3 className="text-orange font-logo font-bold select-none">{'{'}</h3>
+          <h3 className="text-white font-logo font-bold select-none">
             UtopiaBeam
-          </h2>
-          <h2 className="pr-6 text-orange font-logo font-bold select-none">
-            {'}'}
-          </h2>
-        </>
+          </h3>
+          <h3 className="text-orange font-logo font-bold select-none">{'}'}</h3>
+        </div>
       </Link>
       <Link href="/blog">
-        <p className="px-4 font-mono uppercase dark:text-gray-200">Blog</p>
+        <p className="font-mono dark:text-gray-200">BLOG</p>
       </Link>
       <Link href="/me">
-        <p className="px-4 font-mono uppercase dark:text-gray-200">About me</p>
+        <p className="font-mono dark:text-gray-200">ABOUT ME</p>
       </Link>
     </nav>
   )
