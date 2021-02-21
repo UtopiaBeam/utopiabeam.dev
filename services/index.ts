@@ -1,10 +1,4 @@
-import {
-  Asset,
-  CallApiVariables,
-  GetBackgroundFetchResult,
-  GetPostsFetchResult,
-  Post,
-} from './types'
+import { CallApiVariables, GetPostsFetchResult, Post } from './types'
 
 const contentfulApiUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`
 
