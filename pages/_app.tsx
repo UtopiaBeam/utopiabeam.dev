@@ -11,7 +11,9 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       {router.pathname !== '/404' ? <Nav /> : null}
-      <Component {...pageProps} />
+      <div className="flex flex-col flex-grow px-4 md:px-8 lg:px-16 py-6 space-y-6">
+        <Component {...pageProps} />
+      </div>
       <Footer />
     </>
   )
