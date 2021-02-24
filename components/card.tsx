@@ -14,7 +14,7 @@ const Card: React.FC<Props> = props => {
   const { banner } = props
 
   return (
-    <div className="flex flex-col border-2 dark:border-white border-opacity-10 rounded-md hover:border-opacity-50">
+    <div className="flex flex-col border-2 dark:border-white border-opacity-10 rounded-md hover:border-opacity-50 cursor-pointer">
       {banner ? (
         <Image
           src={banner.url}
