@@ -13,6 +13,7 @@ const Posts: React.FC<Props> = ({ posts }) => {
           key={`card-${post.slug}`}
           {...post}
           date={post.sys.firstPublishedAt}
+          url={`/blog/${post.slug}`}
         />
       ))}
     </div>
