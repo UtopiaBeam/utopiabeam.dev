@@ -13,7 +13,7 @@ const Index: NextPage<Props> = props => {
   return (
     <>
       <SEO />
-      <h1 className="dark:text-gray-200">RECENT POSTS</h1>
+      <h2 className="dark:text-gray-200">RECENT POSTS</h2>
       <Posts posts={posts} />
     </>
   )

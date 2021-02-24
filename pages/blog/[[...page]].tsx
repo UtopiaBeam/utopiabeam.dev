@@ -14,7 +14,7 @@ const Page: React.FC<Props> = ({ posts, page, totalPage }) => {
   return (
     <>
       <SEO title="Blog" />
-      <h1 className="dark:text-gray-200">ALL POSTS</h1>
+      <h2 className="dark:text-gray-200">ALL POSTS</h2>
       <Posts posts={posts} />
       <Pagination current={page} total={totalPage} />
     </>
