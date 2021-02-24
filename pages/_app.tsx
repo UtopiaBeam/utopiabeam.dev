@@ -9,13 +9,13 @@ const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
 
   return (
-    <>
+    <div className="flex flex-col dark:bg-darkgray min-h-screen">
       {router.pathname !== '/404' ? <Nav /> : null}
       <div className="flex flex-col flex-grow px-4 md:px-8 lg:px-16 py-6 space-y-6">
         <Component {...pageProps} />
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
 
