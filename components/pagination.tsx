@@ -13,7 +13,10 @@ const Pagination: React.FC<Props> = ({ current, total }) => {
     const page = start + i
 
     return (
-      <Link key={`page-${page}`} href={page === 1 ? '/blog' : `/blog/${page}`}>
+      <Link
+        key={`page-${page}`}
+        href={page === 1 ? '/blog' : `/blog/page/${page}`}
+      >
         <p
           className={`dark:${
             page === current ? 'text-blue-500' : 'text-gray-500'

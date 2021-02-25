@@ -23,7 +23,7 @@ const Page: React.FC<Props> = ({ posts, page, totalPage }) => {
 
 export const getStaticProps: GetStaticProps<Props> = async ctx => {
   const { params, preview = false } = ctx
-  const page = Number(params.page?.[0] ?? 1)
+  const page = Number(params.page?.[1] ?? 1)
 
   const allPosts = await getPosts(preview)
   const posts = allPosts.slice(6 * (page - 1), 6 * page)
@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: Array.from({ length: pageCount }, (_, page) => ({
-      params: { page: page === 0 ? [] : [(page + 1).toString()] },
+      params: { page: page === 0 ? [] : ['page', (page + 1).toString()] },
     })),
     fallback: false,
   }
