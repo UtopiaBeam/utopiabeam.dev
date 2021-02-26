@@ -13,10 +13,10 @@ export interface Post {
   }
   banner: Asset
   content: string
-  tagCollection: {
+  tagsCollection: {
     items: {
       name: string
-    }
+    }[]
   }
 }
 
