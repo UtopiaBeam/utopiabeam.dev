@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Footer from '../components/footer'
 import Nav from '../components/nav'
 import '../styles/tailwind.css'
+import '../styles/katex.min.css'
 
 const MyApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
