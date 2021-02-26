@@ -9,11 +9,13 @@ interface MarkdownNode extends Node {
 function createIframe(node: MarkdownNode, url: string) {
   node.type = 'html'
   node.value = `
-    <div class="">
+    <div class="w-full aspect-w-16 aspect-h-9 ">
       <iframe
-        src="${url}
+        src="${url}"
         class="w-full border-0"
         loading="lazy"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
     </div>
@@ -21,7 +23,7 @@ function createIframe(node: MarkdownNode, url: string) {
 }
 
 const iframeParser: Plugin = () => async (markdownAST: MarkdownNode) => {
-  const nodes = selectAll('[type=inline]', markdownAST) as MarkdownNode[]
+  const nodes = selectAll('[type=inlineCode]', markdownAST) as MarkdownNode[]
 
   await Promise.all(
     nodes.map(async node => {
@@ -30,11 +32,15 @@ const iframeParser: Plugin = () => async (markdownAST: MarkdownNode) => {
         return
       }
 
-      const [provider, url] = matcher
+      const [, provider, url] = matcher
       if (provider === 'youtube') {
-        createIframe(node, `https://www.youtube.com/embed/${url}`)
+        const result = url.split('/')
+        const videoId = result[result.length - 1]
+        createIframe(node, `https://www.youtube.com/embed/${videoId}`)
       } else {
         console.log(node.value)
+        console.log(provider)
+        console.log(url)
       }
     })
   )
