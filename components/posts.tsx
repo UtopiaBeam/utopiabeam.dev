@@ -14,6 +14,7 @@ const Posts: React.FC<Props> = ({ posts }) => {
           {...post}
           date={post.sys.firstPublishedAt}
           url={`/blog/${post.slug}`}
+          tags={post.tagsCollection.items.map(t => t.name)}
         />
       ))}
     </div>
