@@ -13,14 +13,14 @@ const Nav: React.FC = () => {
         </div>
       </Link>
       <Link href="/blog">
-        <p className="font-mono dark:text-gray-200 select-none cursor-pointer hover:text-orange">
+        <a className="font-mono dark:text-gray-200 select-none cursor-pointer hover:text-orange">
           BLOG
-        </p>
+        </a>
       </Link>
       <Link href="/me">
-        <p className="font-mono dark:text-gray-200 select-none cursor-pointer hover:text-orange">
+        <a className="font-mono dark:text-gray-200 select-none cursor-pointer hover:text-orange">
           ABOUT ME
-        </p>
+        </a>
       </Link>
     </nav>
   )

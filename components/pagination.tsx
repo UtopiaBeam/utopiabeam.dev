@@ -17,13 +17,13 @@ const Pagination: React.FC<Props> = ({ current, total }) => {
         key={`page-${page}`}
         href={page === 1 ? '/blog' : `/blog/page/${page}`}
       >
-        <p
+        <a
           className={`dark:${
             page === current ? 'text-blue-500' : 'text-gray-500'
           } dark:hover:text-orange cursor-pointer`}
         >
           {page}
-        </p>
+        </a>
       </Link>
     )
   })
