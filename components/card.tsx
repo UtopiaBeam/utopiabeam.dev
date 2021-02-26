@@ -26,12 +26,9 @@ const Card: React.FC<Props> = props => {
       ) : null}
       <div className="flex flex-col px-4 py-3 space-y-3">
         <p className="dark:text-gray-500">{formatDate(props.date)}</p>
-        <div className="flex space-x-3">
+        <div className="space-x-3 font-mono dark:text-blue-500">
           {props.tags.map(tag => (
-            <span
-              key={`${props.title}-${tag}`}
-              className="font-mono dark:text-blue-500"
-            >
+            <span key={`${props.title}-${tag}`}>
               #{tag.toLocaleUpperCase()}
             </span>
           ))}
