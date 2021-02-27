@@ -1,11 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
 import remark from 'remark'
+import gfm from 'remark-gfm'
 import html from 'remark-html'
 import htmlKatex from 'remark-html-katex'
 import math from 'remark-math'
+import prism from 'remark-prism'
 import SEO from '../../components/seo'
-import { getPost, getPosts, Post } from '../../services'
+import { formatDate, getPost, getPosts, Post } from '../../services'
 import iframeParser from '../../services/iframe-parser'
 
 interface Props {
@@ -13,13 +15,20 @@ interface Props {
 }
 
 const Page: React.FC<Props> = ({ post }) => {
-  const { title, description, sys, banner, content } = post
+  const { title, slug, description, sys, banner, content } = post
+  const tags = post.tagsCollection.items.map(t => t.name)
+
   return (
     <>
       <SEO title={title} description={description} image={banner.url} />
-      <div className="w-1/2 mx-auto space-y-3">
-        <h1 className="dark:text-white">{title}</h1>
-        <p className="dark:text-gray-300">{description}</p>
+      <div className="md:w-3/4 lg:w-1/2 mx-auto space-y-3">
+        <h1 className="dark:text-gray-100">{title}</h1>
+        <div className="space-x-3 font-mono dark:text-blue-500">
+          {tags.map(t => (
+            <span key={`${slug}-${t}`}>#{t.toLocaleUpperCase()}</span>
+          ))}
+        </div>
+        <p className="dark:text-gray-400">{formatDate(sys.firstPublishedAt)}</p>
         <Image src={banner.url} width={banner.width} height={banner.height} />
         <article
           className="dark:text-gray-300 leading-loose"
@@ -34,6 +43,8 @@ export const getStaticProps: GetStaticProps<Props> = async ctx => {
   const { params, preview = false } = ctx
   const post = await getPost(params.slug as string, preview)
   const content = await remark()
+    .use(gfm)
+    .use(prism)
     .use(math)
     .use(htmlKatex)
     .use(html)
