@@ -19,3 +19,8 @@ h1 {
 h2 {
   @apply text-xl;
 }
+
+li {
+  @apply list-inside;
+  @apply list-disc;
+}
