@@ -18,7 +18,7 @@ const lazyParser: Plugin = () => async (markdownAST: MarkdownNode) => {
       node.children = undefined
       node.value = `
       <img
-        class="my-3"
+        class="my-3 mx-auto"
         src="${node.url}"
         alt="${node.alt}"
         loading="lazy"
