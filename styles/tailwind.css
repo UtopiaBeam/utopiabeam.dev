@@ -24,3 +24,7 @@ li {
   @apply list-inside;
   @apply list-disc;
 }
+
+hr {
+  @apply my-2;
+}
