@@ -1,10 +1,6 @@
 import { Plugin } from 'unified'
-import { Node } from 'unist'
 import { selectAll } from 'unist-util-select'
-
-interface MarkdownNode extends Node {
-  value: string
-}
+import { MarkdownNode } from '.'
 
 function createIframe(node: MarkdownNode, url: string) {
   node.type = 'html'

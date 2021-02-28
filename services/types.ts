@@ -1,3 +1,5 @@
+import { Node } from 'unist'
+
 export interface Asset {
   url: string
   width: number
@@ -31,4 +33,8 @@ export interface GetPostsFetchResult {
       items: Post[]
     }
   }
+}
+
+export interface MarkdownNode extends Node {
+  value: string
 }

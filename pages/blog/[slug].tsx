@@ -9,6 +9,7 @@ import prism from 'remark-prism'
 import SEO from '../../components/seo'
 import { formatDate, getPost, getPosts, Post } from '../../services'
 import iframeParser from '../../services/iframe-parser'
+import lazyParser from '../../services/lazy-parser'
 
 interface Props {
   post: Post
@@ -49,6 +50,7 @@ export const getStaticProps: GetStaticProps<Props> = async ctx => {
     .use(htmlKatex)
     .use(html)
     .use(iframeParser)
+    .use(lazyParser)
     .process(post.content)
 
   return { props: { post: { ...post, content: content.toString() } } }
