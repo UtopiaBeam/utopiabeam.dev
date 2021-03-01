@@ -27,4 +27,34 @@ li {
 
 hr {
   @apply my-2;
+  @apply border-gray-500;
+}
+
+article {
+  @apply text-lg;
+}
+
+article > h2 {
+  @apply text-2xl;
+}
+
+table,
+th,
+td {
+  @apply border-collapse;
+  @apply border;
+  @apply border-black;
+}
+
+th,
+td {
+  @apply p-1;
+}
+
+@media (prefers-color-scheme: dark) {
+  table,
+  th,
+  td {
+    @apply border-gray-300;
+  }
 }
