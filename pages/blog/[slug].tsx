@@ -30,9 +30,11 @@ const Page: React.FC<Props> = ({ post }) => {
           ))}
         </div>
         <p className="dark:text-gray-400">{formatDate(sys.firstPublishedAt)}</p>
-        <Image src={banner.url} width={banner.width} height={banner.height} />
+        <div>
+          <Image src={banner.url} width={banner.width} height={banner.height} />
+        </div>
         <article
-          className="dark:text-gray-300 leading-loose"
+          className="dark:text-gray-200 leading-loose"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
