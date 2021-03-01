@@ -9,7 +9,7 @@ h4,
 h5,
 h6 {
   @apply font-header;
-  @apply font-medium;
+  @apply font-bold;
 }
 
 h1 {
@@ -28,10 +28,6 @@ li {
 hr {
   @apply my-2;
   @apply border-gray-500;
-}
-
-article {
-  @apply text-lg;
 }
 
 article > h2 {
