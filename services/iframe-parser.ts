@@ -5,7 +5,7 @@ import { MarkdownNode } from '.'
 function createIframe(node: MarkdownNode, url: string) {
   node.type = 'html'
   node.value = `
-    <div class="w-full aspect-w-16 aspect-h-9 ">
+    <div class="w-full my-3 aspect-w-16 aspect-h-9 ">
       <iframe
         src="${url}"
         class="w-full border-0"
