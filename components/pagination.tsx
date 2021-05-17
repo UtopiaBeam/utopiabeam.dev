@@ -20,7 +20,7 @@ const Pagination: React.FC<Props> = ({ current, total }) => {
         <a
           className={`dark:${
             page === current ? 'text-blue-500' : 'text-gray-500'
-          } dark:hover:text-orange cursor-pointer`}
+          } dark:hover:text-orange cursor-pointer font-mono text-xl`}
         >
           {page}
         </a>
