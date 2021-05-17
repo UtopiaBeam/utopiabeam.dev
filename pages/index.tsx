@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from 'next'
+import Link from 'next/link'
 import Posts from '../components/posts'
 import SEO from '../components/seo'
 import { getPosts, Post } from '../services'
@@ -15,6 +16,13 @@ const Index: NextPage<Props> = props => {
       <SEO />
       <h2 className="font-mono dark:text-gray-200">RECENT POSTS</h2>
       <Posts posts={posts} />
+      <div className="flex justify-end">
+        <Link href="/blog">
+          <a className="dark:text-blue-500 dark:hover:text-orange cursor-pointer font-mono text-xl">
+            {`See more \u27f6`}
+          </a>
+        </Link>
+      </div>
     </>
   )
 }
