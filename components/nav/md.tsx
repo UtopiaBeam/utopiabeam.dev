@@ -5,12 +5,13 @@ import Github from '../buttons/github'
 import LinkedIn from '../buttons/linkedin'
 import Twitch from '../buttons/twitch'
 import Twitter from '../buttons/twitter'
+import Webring from '../buttons/webring'
 
 const NavMd: React.FC = () => (
-  <nav className="hidden md:flex justify-between bg-gray-200 dark:bg-darkgray border-b-2 border-darkgray dark:border-white border-opacity-10">
-    <div className="flex space-x-8 items-baseline p-3 md:px-4">
+  <nav className="hidden md:flex justify-between bg-gray-200 dark:bg-darkgray border-b-2 border-darkgray dark:border-white border-opacity-10 p-3">
+    <div className="flex space-x-8 items-baseline">
       <Link href="/">
-        <div className="flex items-center pr-4 cursor-pointer">
+        <div className="flex items-center cursor-pointer">
           <h3 className="text-orange font-logo font-bold select-none">{'{'}</h3>
           <h3 className="text-white font-logo font-bold select-none">
             UtopiaBeam
@@ -29,7 +30,8 @@ const NavMd: React.FC = () => (
         </a>
       </Link>
     </div>
-    <div className="flex space-x-6 p-3 md:px-6">
+    <div className="flex space-x-6">
+      <Webring />
       <Facebook />
       <Twitter />
       <Twitch />
