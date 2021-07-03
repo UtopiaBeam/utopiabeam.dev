@@ -22,7 +22,7 @@ const Page: React.FC<Props> = ({ post }) => {
   return (
     <>
       <SEO title={title} description={description} image={banner.url} />
-      <div className="md:w-3/4 lg:w-1/2 mx-auto space-y-3">
+      <div className="md:w-3/4 lg:w-1/2 mx-auto my-3 space-y-3">
         <h1 className="dark:text-gray-100">{title}</h1>
         <div className="space-x-3 font-mono dark:text-blue-500">
           {tags.map(t => (
