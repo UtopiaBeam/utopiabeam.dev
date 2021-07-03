@@ -1,9 +1,10 @@
 import Link from 'next/link'
-import FacebookLogo from '../logo/facebook'
-import TwitterLogo from '../logo/twitter'
-import TwitchLogo from '../logo/twitch'
-import GithubLogo from '../logo/github'
-import LinkedInLogo from '../logo/linkedin'
+import React from 'react'
+import Facebook from '../buttons/facebook'
+import Github from '../buttons/github'
+import LinkedIn from '../buttons/linkedin'
+import Twitch from '../buttons/twitch'
+import Twitter from '../buttons/twitter'
 
 const NavMd: React.FC = () => (
   <nav className="hidden md:flex justify-between bg-gray-200 dark:bg-darkgray border-b-2 border-darkgray dark:border-white border-opacity-10">
@@ -29,31 +30,11 @@ const NavMd: React.FC = () => (
       </Link>
     </div>
     <div className="flex space-x-6 p-3 md:px-6">
-      <Link href="https://www.facebook.com/natchapolsrisang">
-        <a target="_blank" className="select-none cursor-pointer">
-          <FacebookLogo />
-        </a>
-      </Link>
-      <Link href="https://twitter.com/UtopiaBeam">
-        <a target="_blank" className="select-none cursor-pointer">
-          <TwitterLogo />
-        </a>
-      </Link>
-      <Link href="https://www.twitch.tv/utopiabeam">
-        <a target="_blank" className="select-none cursor-pointer">
-          <TwitchLogo />
-        </a>
-      </Link>
-      <Link href="https://github.com/UtopiaBeam">
-        <a target="_blank" className="select-none cursor-pointer">
-          <GithubLogo />
-        </a>
-      </Link>
-      <Link href="https://www.linkedin.com/in/natchapol-srisang-3b723b16a">
-        <a target="_blank" className="select-none cursor-pointer">
-          <LinkedInLogo />
-        </a>
-      </Link>
+      <Facebook />
+      <Twitter />
+      <Twitch />
+      <Github />
+      <LinkedIn />
     </div>
   </nav>
 )
