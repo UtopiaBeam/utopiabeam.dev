@@ -6,6 +6,7 @@ import Github from '../buttons/github'
 import LinkedIn from '../buttons/linkedin'
 import Twitch from '../buttons/twitch'
 import Twitter from '../buttons/twitter'
+import Webring from '../buttons/webring'
 
 const NavSm: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
@@ -46,6 +47,7 @@ const NavSm: React.FC = () => {
             </a>
           </Link>
           <div className="flex justify-around px-6 py-3 border-b-2 border-darkgray dark:border-white border-opacity-10">
+            <Webring />
             <Facebook />
             <Twitter />
             <Twitch />
