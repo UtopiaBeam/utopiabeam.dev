@@ -27,7 +27,6 @@ li {
 
 hr {
   @apply my-2;
-  @apply border-gray-500;
 }
 
 article > h2 {
@@ -39,7 +38,6 @@ th,
 td {
   @apply border-collapse;
   @apply border;
-  @apply border-black;
 }
 
 th,
@@ -52,10 +50,18 @@ blockquote > p {
 }
 
 @media (prefers-color-scheme: dark) {
+  hr {
+    @apply border-gray-500;
+  }
+
   table,
   th,
   td {
     @apply border-gray-300;
+  }
+
+  td {
+    @apply border-black;
   }
 
   blockquote > p {
