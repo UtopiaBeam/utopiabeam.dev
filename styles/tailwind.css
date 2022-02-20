@@ -47,10 +47,18 @@ td {
   @apply p-1;
 }
 
+blockquote > p {
+  @apply px-6 py-4 text-xl;
+}
+
 @media (prefers-color-scheme: dark) {
   table,
   th,
   td {
     @apply border-gray-300;
+  }
+
+  blockquote > p {
+    @apply bg-gray-800 border-l-4 border-orange;
   }
 }
