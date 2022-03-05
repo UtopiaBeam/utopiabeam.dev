@@ -15,13 +15,13 @@ const Card: React.FC<Props> = props => {
   const { banner } = props
 
   const card = (
-    <div className="flex flex-col border-2 dark:border-white border-opacity-10 rounded-md hover:border-opacity-50 cursor-pointer">
+    <div className="flex flex-col ease-in-out duration-100 border-2 border-gray-400/50 rounded shadow-[0_0_orange] hover:translate-x-1 hover:-translate-y-1 hover:border-orange hover:shadow-[-0.25rem_0.25rem_orange]">
       {banner ? (
         <Image
           src={banner.url}
           width={banner.width}
           height={banner.height}
-          className="rounded-t"
+          className="rounded-t-sm"
         />
       ) : null}
       <div className="flex flex-col px-4 py-3 space-y-3">
