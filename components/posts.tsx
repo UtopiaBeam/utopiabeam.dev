@@ -1,4 +1,4 @@
-import { Post } from '../services'
+import { Post } from '../utils'
 import Card from './card'
 
 interface Props {

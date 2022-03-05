@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import Posts from '../components/posts'
 import SEO from '../components/seo'
-import { getPosts, Post } from '../services'
+import { getPosts, Post } from '../utils'
 
 interface Props {
   posts: Post[]
