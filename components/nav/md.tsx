@@ -8,7 +8,7 @@ import Twitter from '../buttons/twitter'
 import Webring from '../buttons/webring'
 
 const NavMd: React.FC = () => (
-  <nav className="hidden md:flex justify-between bg-gray-200 dark:bg-darkgray border-b-2 border-darkgray dark:border-white border-opacity-10 p-3">
+  <nav className="hidden md:flex justify-between bg-gray-200 dark:bg-darkgray border-b-2 border-darkgray dark:border-gray-400/50 p-3">
     <div className="flex space-x-8 items-baseline">
       <Link href="/">
         <div className="flex items-center cursor-pointer">
