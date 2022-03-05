@@ -1,8 +1,10 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: ['./src/**/*.{html,tsx,ts,jsx,js}'],
-  darkMode: 'media',
+  content: [
+    './pages/**/*.{html,tsx,ts,jsx,js}',
+    './components/**/*.{html,tsx,ts,jsx,js}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -17,9 +19,6 @@ module.exports = {
         logo: ['"Space Mono"', ...defaultTheme.fontFamily.mono],
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [
     require('@tailwindcss/typography'),
