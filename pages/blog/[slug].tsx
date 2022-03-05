@@ -1,15 +1,15 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
-import remark from 'remark'
+import { remark } from 'remark'
 import gfm from 'remark-gfm'
 import html from 'remark-html'
 import htmlKatex from 'remark-html-katex'
 import math from 'remark-math'
 import prism from 'remark-prism'
 import SEO from '../../components/seo'
-import { formatDate, getPost, getPosts, Post } from '../../services'
-import iframeParser from '../../services/iframe-parser'
-import lazyParser from '../../services/lazy-parser'
+import { formatDate, getPost, getPosts, Post } from '../../utils'
+import iframeParser from '../../utils/iframe-parser'
+import lazyParser from '../../utils/lazy-parser'
 
 interface Props {
   post: Post

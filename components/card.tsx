@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Asset, formatDate } from '../services'
+import { Asset, formatDate } from '../utils'
 
 interface Props {
   title: string

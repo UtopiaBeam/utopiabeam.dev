@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { getPosts, Post } from '../../services'
+import { getPosts, Post } from '../../utils'
 import Posts from '../../components/posts'
 import Pagination from '../../components/pagination'
 import SEO from '../../components/seo'
