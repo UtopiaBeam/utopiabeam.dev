@@ -1,15 +1,16 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
-import { remark } from 'remark'
+import parse from 'remark-parse'
 import gfm from 'remark-gfm'
-import html from 'remark-html'
-import htmlKatex from 'remark-html-katex'
 import math from 'remark-math'
 import prism from 'remark-prism'
+import remarkToRehype from 'remark-rehype'
+import katex from 'rehype-katex'
+import html from 'rehype-stringify'
+import { unified } from 'unified'
 import SEO from '../../components/seo'
+import { iframeParser } from '../../plugins'
 import { formatDate, getPost, getPosts, Post } from '../../utils'
-import iframeParser from '../../utils/iframe-parser'
-import lazyParser from '../../utils/lazy-parser'
 
 interface Props {
   post: Post
@@ -23,18 +24,18 @@ const Page: React.FC<Props> = ({ post }) => {
     <>
       <SEO title={title} description={description} image={banner.url} />
       <div className="md:w-3/4 lg:w-1/2 mx-auto my-3 space-y-3">
-        <h1 className="dark:text-gray-100">{title}</h1>
-        <div className="space-x-3 font-mono dark:text-blue-500">
+        <h1 className="text-gray-100">{title}</h1>
+        <div className="space-x-3 font-mono text-blue-500">
           {tags.map(t => (
             <span key={`${slug}-${t}`}>#{t.toLocaleUpperCase()}</span>
           ))}
         </div>
-        <p className="dark:text-gray-400">{formatDate(sys.firstPublishedAt)}</p>
+        <p className="text-gray-400">{formatDate(sys.firstPublishedAt)}</p>
         <div>
           <Image src={banner.url} width={banner.width} height={banner.height} />
         </div>
         <article
-          className="dark:text-gray-200 text-lg space-y-4 leading-loose"
+          className="text-gray-200 text-lg space-y-4 leading-loose"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
@@ -45,14 +46,16 @@ const Page: React.FC<Props> = ({ post }) => {
 export const getStaticProps: GetStaticProps<Props> = async ctx => {
   const { params, preview = false } = ctx
   const post = await getPost(params.slug as string, preview)
-  const content = await remark()
+  const content = await unified()
+    .use(parse)
     .use(gfm)
+    // @ts-ignore
     .use(prism)
     .use(math)
-    .use(htmlKatex)
-    .use(html)
+    .use(remarkToRehype)
     .use(iframeParser)
-    .use(lazyParser)
+    .use(katex)
+    .use(html)
     .process(post.content)
 
   return { props: { post: { ...post, content: content.toString() } } }
