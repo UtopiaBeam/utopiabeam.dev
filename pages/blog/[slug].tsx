@@ -6,6 +6,7 @@ import math from 'remark-math'
 import prism from 'remark-prism'
 import remarkToRehype from 'remark-rehype'
 import katex from 'rehype-katex'
+import document from 'rehype-document'
 import html from 'rehype-stringify'
 import { unified } from 'unified'
 import SEO from '../../components/seo'
@@ -55,6 +56,9 @@ export const getStaticProps: GetStaticProps<Props> = async ctx => {
     .use(remarkToRehype)
     .use(iframeParser)
     .use(katex)
+    .use(document, {
+      css: 'https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css',
+    })
     .use(html)
     .process(post.content)
 

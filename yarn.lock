@@ -3375,6 +3375,15 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
+rehype-document@6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/rehype-document/-/rehype-document-6.0.1.tgz#0dcb1e91f8c6f45ded0a56f57f74447243e97eba"
+  integrity sha512-Uz36ekagn5MilQNqNCjmoQBqGHPwr8P39v3N09l38FGaBh5pPEhRQnQb8sG065Mhncs0wEcBSNLN+sOkjFhabQ==
+  dependencies:
+    "@types/hast" "^2.0.0"
+    hastscript "^7.0.0"
+    unified "^10.0.0"
+
 rehype-katex@6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/rehype-katex/-/rehype-katex-6.0.2.tgz#20197bbc10bdf79f6b999bffa6689d7f17226c35"
