@@ -16,12 +16,6 @@ export default class MyDocument extends Document {
             integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg=="
             crossOrigin="anonymous"
           />
-          <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css"
-            integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn"
-            crossOrigin="anonymous"
-          ></link>
         </Head>
         <body>
           <Main />

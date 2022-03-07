@@ -62,7 +62,14 @@ export const getStaticProps: GetStaticProps<Props> = async ctx => {
     .use(html)
     .process(post.content)
 
-  return { props: { post: { ...post, content: content.toString() } } }
+  return {
+    props: {
+      post: {
+        ...post,
+        content: content.toString(),
+      },
+    },
+  }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

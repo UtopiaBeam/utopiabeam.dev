@@ -39,7 +39,7 @@ function createIframe(node: HtmlNode, url: string) {
     type: 'element',
     tagName: 'div',
     properties: {
-      class: 'w-full',
+      class: 'w-full aspect-w-16 aspect-h-9',
     },
     children: [
       {
@@ -47,7 +47,7 @@ function createIframe(node: HtmlNode, url: string) {
         tagName: 'iframe',
         properties: {
           src: url,
-          class: 'border-0',
+          class: 'w-full h-full border-0',
           loading: 'lazy',
           frameborder: 0,
           allow:
