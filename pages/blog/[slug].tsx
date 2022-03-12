@@ -24,6 +24,8 @@ const Page: React.FC<Props> = ({ post }) => {
   return (
     <>
       <SEO title={title} description={description} image={banner.url} />
+      {/* Force tailwindcss to load these classes. */}
+      <div className="aspect-w-16 aspect-h-9 hidden" />
       <div className="md:w-3/4 lg:w-1/2 mx-auto my-3 space-y-3">
         <h1 className="text-gray-100">{title}</h1>
         <div className="space-x-3 font-mono text-blue-500">
