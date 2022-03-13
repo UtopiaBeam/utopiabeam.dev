@@ -4,8 +4,7 @@ import Facebook from '../buttons/facebook'
 import Github from '../buttons/github'
 import LinkedIn from '../buttons/linkedin'
 import Twitch from '../buttons/twitch'
-import Twitter from '../buttons/twitter'
-import Webring from '../buttons/webring'
+import WebRing from '../buttons/webring'
 
 const NavMd: React.FC = () => (
   <nav className="hidden md:flex justify-between bg-gray-200 dark:bg-darkgray border-b-2 border-darkgray dark:border-gray-400/50 p-3">
@@ -31,9 +30,8 @@ const NavMd: React.FC = () => (
       </Link>
     </div>
     <div className="flex space-x-6">
-      <Webring />
+      <WebRing />
       <Facebook />
-      <Twitter />
       <Twitch />
       <Github />
       <LinkedIn />

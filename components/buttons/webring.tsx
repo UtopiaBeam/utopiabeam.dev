@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const Webring: React.FC = () => (
+const WebRing: React.FC = () => (
   <Link href="https://webring.wonderful.software#utopiabeam.dev">
     <a
       title="วงแหวนเว็บ"
@@ -15,7 +15,7 @@ const Webring: React.FC = () => (
         height={24}
         className="fill-current dark:text-gray-200 hover:text-orange"
       >
-        <title>Webring</title>
+        <title>WebRing</title>
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -27,4 +27,4 @@ const Webring: React.FC = () => (
   </Link>
 )
 
-export default Webring
+export default WebRing
