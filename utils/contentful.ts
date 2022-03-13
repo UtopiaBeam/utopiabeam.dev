@@ -21,10 +21,23 @@ async function callApi<T>(
   return result.json()
 }
 
-export async function getPosts(preview = false): Promise<Post[]> {
+export interface PaginationArgs {
+  limit?: number
+  skip?: number
+}
+
+export async function getPosts(
+  preview = false,
+  args?: PaginationArgs
+): Promise<Post[]> {
   const query = `
-    query ($preview: Boolean!) {
-      postCollection(order: [sys_firstPublishedAt_DESC], preview: $preview) {
+    query ($preview: Boolean!, $skip: Int, $limit: Int) {
+      postCollection(
+        order: [sys_firstPublishedAt_DESC]
+        preview: $preview
+        skip: $skip
+        limit: $limit
+      ) {
         items {
           sys {
             firstPublishedAt
@@ -49,7 +62,7 @@ export async function getPosts(preview = false): Promise<Post[]> {
     }
   `
 
-  const result: GetPostsFetchResult = await callApi(query, { preview })
+  const result: GetPostsFetchResult = await callApi(query, { preview, ...args })
 
   return result.data.postCollection.items
 }
