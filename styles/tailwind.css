@@ -60,10 +60,6 @@ blockquote > p {
     @apply border-gray-300;
   }
 
-  td {
-    @apply border-black;
-  }
-
   blockquote > p {
     @apply bg-gray-800 border-l-4 border-orange;
   }
