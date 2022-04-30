@@ -61,6 +61,6 @@ blockquote > p {
   }
 
   blockquote > p {
-    @apply bg-gray-800 border-l-4 border-orange;
+    @apply bg-gray-800 border-l-[6px] border-orange;
   }
 }
