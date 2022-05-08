@@ -2,65 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-header;
-  @apply font-bold;
-}
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-header;
+    @apply font-bold;
+  }
 
-h1 {
-  @apply text-3xl;
-}
+  h1 {
+    @apply text-3xl;
+  }
 
-h2 {
-  @apply text-xl;
-}
+  h2 {
+    @apply text-xl;
+  }
 
-li {
-  @apply list-inside;
-  @apply list-disc;
-}
+  li {
+    @apply list-inside;
+    @apply list-disc;
+  }
 
-hr {
-  @apply my-2;
-}
-
-article > h2 {
-  @apply text-2xl;
-}
-
-table,
-th,
-td {
-  @apply border-collapse;
-  @apply border;
-}
-
-th,
-td {
-  @apply p-1;
-}
-
-blockquote > p {
-  @apply px-6 py-4 text-xl;
-}
-
-@media (prefers-color-scheme: dark) {
   hr {
-    @apply border-gray-500;
+    @apply my-2;
+  }
+
+  article > h2 {
+    @apply text-2xl;
   }
 
   table,
   th,
   td {
-    @apply border-gray-300;
+    @apply border-collapse;
+    @apply border;
+  }
+
+  th,
+  td {
+    @apply p-1;
   }
 
   blockquote > p {
-    @apply bg-gray-800 border-l-[6px] border-orange;
+    @apply px-6 py-4 text-xl;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    hr {
+      @apply border-gray-500;
+    }
+
+    table,
+    th,
+    td {
+      @apply border-gray-300;
+    }
+
+    blockquote > p {
+      @apply bg-gray-800 border-l-[6px] border-orange;
+    }
+  }
+}
+
+@layer components {
+  .thumbnail {
+    @apply relative;
+  }
+  
+  .thumbnail:before,
+  .thumbnail:after {
+    @apply content-[''] block w-2 h-2 absolute transition-all duration-100;
+  }
+
+  .thumbnail:before {
+    @apply top-0 left-0 origin-top-left -rotate-45 scale-0;
+  }
+  
+  .thumbnail:after {
+    @apply bottom-0 right-0 origin-bottom-right rotate-45 scale-0;
+  }
+
+  .thumbnail span {
+    overflow: visible !important;
+  }
+
+  .thumbnail img {
+    @apply block transition-all duration-100 relative z-10;
+  }
+  
+  .thumbnail:hover img {
+    @apply translate-x-1.5 -translate-y-1.5;
+  }
+  
+  .thumbnail:hover:before,
+  .thumbnail:hover:after {
+    @apply scale-100
+  }
+
+  @media (prefers-color-scheme: dark)  {
+    .thumbnail,
+    .thumbnail:before,
+    .thumbnail:after {
+      @apply bg-orange;
+    }
   }
 }
