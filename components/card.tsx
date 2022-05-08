@@ -17,12 +17,14 @@ const Card: React.FC<Props> = props => {
   return (
     <div>
       <div className="thumbnail">
-        <Image
-          layout="responsive"
-          src={banner.url}
-          width={banner.width}
-          height={banner.height}
-        />
+        <Link href={props.url}>
+          <Image
+            layout="responsive"
+            src={banner.url}
+            width={banner.width}
+            height={banner.height}
+          />
+        </Link>
       </div>
       <div className="flex flex-col px-4 py-3 space-y-3">
         <p className="dark:text-gray-500">{formatDate(props.date)}</p>
