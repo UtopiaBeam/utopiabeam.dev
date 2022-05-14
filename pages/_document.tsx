@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Sarabun:wght@400;600&family=Athiti:wght@500&family=Space+Mono:wght@700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Sarabun:wght@400;600&family=Athiti:wght@600&family=Space+Mono:wght@700&display=swap"
             rel="stylesheet"
           />
           <link
