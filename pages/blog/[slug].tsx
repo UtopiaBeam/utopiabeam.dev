@@ -38,7 +38,7 @@ const Page: React.FC<Props> = ({ post }) => {
           <Image src={banner.url} width={banner.width} height={banner.height} />
         </div>
         <article
-          className="text-gray-200 text-lg space-y-4 leading-loose"
+          className="text-gray-300 text-lg space-y-4 leading-loose"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
