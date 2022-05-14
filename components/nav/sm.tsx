@@ -6,6 +6,7 @@ import Github from '../buttons/github'
 import LinkedIn from '../buttons/linkedin'
 import Twitch from '../buttons/twitch'
 import WebRing from '../buttons/webring'
+import Logo from '../logo'
 
 const NavSm: React.FC = () => {
   const [isOpen, setOpen] = useState(false)
@@ -15,15 +16,7 @@ const NavSm: React.FC = () => {
       <nav className="flex md:hidden justify-between bg-darkgray border-b-2 border-gray-400/50">
         <Link href="/">
           <div className="flex items-center p-3 cursor-pointer">
-            <h3 className="text-orange font-logo font-bold select-none">
-              {'{'}
-            </h3>
-            <h3 className="text-white font-logo font-bold select-none">
-              UtopiaBeam
-            </h3>
-            <h3 className="text-orange font-logo font-bold select-none">
-              {'}'}
-            </h3>
+            <Logo />
           </div>
         </Link>
         <button

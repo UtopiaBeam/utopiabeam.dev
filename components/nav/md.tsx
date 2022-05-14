@@ -5,17 +5,14 @@ import Github from '../buttons/github'
 import LinkedIn from '../buttons/linkedin'
 import Twitch from '../buttons/twitch'
 import WebRing from '../buttons/webring'
+import Logo from '../logo'
 
 const NavMd: React.FC = () => (
   <nav className="hidden md:flex justify-between bg-gray-200 dark:bg-darkgray border-b-2 border-darkgray dark:border-gray-400/50 p-3">
     <div className="flex space-x-8 items-baseline">
       <Link href="/">
         <div className="flex items-center cursor-pointer">
-          <h3 className="text-orange font-logo font-bold select-none">{'{'}</h3>
-          <h3 className="text-white font-logo font-bold select-none">
-            UtopiaBeam
-          </h3>
-          <h3 className="text-orange font-logo font-bold select-none">{'}'}</h3>
+          <Logo />
         </div>
       </Link>
       <Link href="/blog">
