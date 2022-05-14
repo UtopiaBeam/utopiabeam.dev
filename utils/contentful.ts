@@ -1,4 +1,10 @@
-import { CallApiVariables, GetPostsFetchResult, Post } from './types'
+import {
+  CallApiVariables,
+  Cv,
+  GetCvResult,
+  GetPostsFetchResult,
+  Post,
+} from './types'
 
 const contentfulApiUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`
 
@@ -101,4 +107,20 @@ export async function getPost(slug: string, preview = false): Promise<Post> {
     throw `No post ${slug}`
   }
   return result.data.postCollection.items[0]
+}
+
+export async function getCv(preview = false): Promise<Cv> {
+  const query = `
+    query ($id: String!) {
+      cv(id: $id) {
+        content
+      }
+    }
+  `
+  const result: GetCvResult = await callApi(query, {
+    id: '4q4PvTngXONiTDCaoA3n6E',
+    preview,
+  })
+
+  return result.data.cv
 }
