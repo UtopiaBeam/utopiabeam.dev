@@ -1,3 +1,8 @@
+export interface CallApiVariables {
+  preview: boolean
+  [k: string]: unknown
+}
+
 export interface Asset {
   url: string
   width: number
@@ -9,6 +14,7 @@ export interface Post {
   slug: string
   description: string
   sys: {
+    id: string
     firstPublishedAt: string
   }
   banner: Asset
@@ -18,11 +24,6 @@ export interface Post {
       name: string
     }[]
   }
-}
-
-export interface CallApiVariables {
-  preview: boolean
-  [k: string]: unknown
 }
 
 export interface GetPostsFetchResult {

@@ -46,6 +46,7 @@ export async function getPosts(
       ) {
         items {
           sys {
+            id
             firstPublishedAt
           }
           title
