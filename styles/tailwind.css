@@ -9,25 +9,23 @@
   h4,
   h5,
   h6 {
-    @apply font-header;
-    @apply font-bold;
+    @apply font-header font-bold;
   }
 
   h1 {
     @apply text-3xl;
   }
 
-  h2 {
+  h2, h3 {
     @apply text-2xl;
   }
 
   h3 {
-    @apply text-xl;
+    @apply italic;
   }
 
   li {
-    @apply list-inside;
-    @apply list-disc;
+    @apply list-inside list-disc;
   }
 
   hr {
@@ -41,8 +39,7 @@
   table,
   th,
   td {
-    @apply border-collapse;
-    @apply border;
+    @apply border-collapse border;
   }
 
   th,
