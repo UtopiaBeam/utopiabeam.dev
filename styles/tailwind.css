@@ -32,10 +32,6 @@
     @apply my-2;
   }
 
-  article > h2 {
-    @apply text-2xl;
-  }
-
   table,
   th,
   td {
@@ -64,6 +60,15 @@
 
     blockquote > p {
       @apply bg-gray-800 border-l-[6px] border-orange;
+    }
+
+    h1 {
+      @apply text-gray-100;
+    }
+
+    h2,
+    h3 {
+      @apply text-gray-200;
     }
   }
 }
