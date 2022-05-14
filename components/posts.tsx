@@ -10,7 +10,7 @@ const Posts: React.FC<Props> = ({ posts }) => {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {posts.map(post => (
         <Card
-          key={`card-${post.slug}`}
+          key={`card-${post.sys.id}`}
           {...post}
           date={post.sys.firstPublishedAt}
           url={`/blog/${post.slug}`}
