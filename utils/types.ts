@@ -34,12 +34,29 @@ export interface GetPostsFetchResult {
   }
 }
 
-export interface Cv {
-  content: string
+export interface Experience {
+  sys: {
+    id: string
+  }
+  title: string
+  startDate: string
+  endDate?: string
+  description: string
+  url?: string
 }
 
-export interface GetCvResult {
+export interface Experiences {
+  works: Experience[]
+  educations: Experience[]
+}
+
+export interface GetExperiencesFetchResult {
   data: {
-    cv: Cv
+    works: {
+      items: Experience[]
+    }
+    educations: {
+      items: Experience[]
+    }
   }
 }
