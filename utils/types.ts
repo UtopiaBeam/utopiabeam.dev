@@ -32,3 +32,13 @@ export interface GetPostsFetchResult {
     }
   }
 }
+
+export interface Cv {
+  content: string
+}
+
+export interface GetCvResult {
+  data: {
+    cv: Cv
+  }
+}
