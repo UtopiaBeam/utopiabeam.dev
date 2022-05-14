@@ -1,7 +1,8 @@
 import {
   CallApiVariables,
-  Cv,
-  GetCvResult,
+  Experience,
+  Experiences,
+  GetExperiencesFetchResult,
   GetPostsFetchResult,
   Post,
 } from './types'
@@ -110,18 +111,44 @@ export async function getPost(slug: string, preview = false): Promise<Post> {
   return result.data.postCollection.items[0]
 }
 
-export async function getCv(preview = false): Promise<Cv> {
+export async function getExperiences(preview = false): Promise<Experiences> {
   const query = `
-    query ($id: String!) {
-      cv(id: $id) {
-        content
+    query {
+      works: experienceCollection(order: startDate_DESC, where: {type: "Work"}) {
+        items {
+          sys {
+            id
+          }
+          title
+          startDate
+          endDate
+          description
+          url
+        }
+      }
+      educations: experienceCollection(order: startDate_DESC, where: {type: "Education"}) {
+        items {
+          sys {
+            id
+          }
+          title
+          startDate
+          endDate
+          description
+          url
+        }
       }
     }
   `
-  const result: GetCvResult = await callApi(query, {
+  const result: GetExperiencesFetchResult = await callApi(query, {
     id: '4q4PvTngXONiTDCaoA3n6E',
     preview,
   })
 
-  return result.data.cv
+  const { works, educations } = result.data
+
+  return {
+    works: works.items,
+    educations: educations.items,
+  }
 }
