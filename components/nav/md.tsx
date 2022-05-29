@@ -8,7 +8,7 @@ import WebRing from '../buttons/webring'
 import Logo from '../logo'
 
 const NavMd: React.FC = () => (
-  <nav className="hidden md:flex justify-between bg-gray-200 bg-darkgray border-b-2 border-darkgray border-gray-400/50 p-3">
+  <nav className="hidden md:flex justify-between bg-darkgray border-b-2 border-gray-400/50 p-3">
     <div className="flex space-x-8 items-baseline">
       <Link href="/">
         <div className="flex items-center cursor-pointer">
