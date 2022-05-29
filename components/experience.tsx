@@ -21,7 +21,7 @@ const Experience: React.FC<Props> = ({ data }) => {
       </div>
       <p>{`${startMonth} - ${endMonth}`}</p>
       <div
-        className="dark:text-gray-300 text-lg space-y-4 leading-loose"
+        className="text-gray-300 text-lg space-y-4 leading-loose"
         dangerouslySetInnerHTML={{ __html: data.description }}
       />
     </div>

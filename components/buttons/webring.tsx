@@ -13,7 +13,7 @@ const WebRing: React.FC = () => (
         xmlns="http://www.w3.org/2000/svg"
         width={24}
         height={24}
-        className="fill-current dark:text-gray-200 hover:text-orange"
+        className="fill-current text-gray-200 hover:text-orange"
       >
         <title>WebRing</title>
         <path

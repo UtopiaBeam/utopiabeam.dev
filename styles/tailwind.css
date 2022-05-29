@@ -47,7 +47,7 @@
     @apply px-6 py-4 text-xl;
   }
 
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) { */
     hr {
       @apply border-gray-500;
     }
@@ -70,7 +70,7 @@
     h3 {
       @apply text-gray-200;
     }
-  }
+  /* } */
 }
 
 @layer components {
@@ -108,11 +108,11 @@
     @apply scale-100
   }
 
-  @media (prefers-color-scheme: dark)  {
+  /* @media (prefers-color-scheme: dark)  { */
     .thumbnail,
     .thumbnail:before,
     .thumbnail:after {
       @apply bg-orange;
     }
-  }
+  /* } */
 }

@@ -15,7 +15,7 @@ const Me: React.FC<Props> = props => {
   return (
     <>
       <SEO title="About me" description="About me" />
-      <div className="md:w-3/4 lg:w-1/2 mx-auto my-3 space-y-8 dark:text-gray-300">
+      <div className="md:w-3/4 lg:w-1/2 mx-auto my-3 space-y-8 text-gray-300">
         <h1>Education</h1>
         {props.educations.map(data => (
           <Experience key={data.sys.id} data={data} />

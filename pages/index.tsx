@@ -14,7 +14,7 @@ const Index: NextPage<Props> = props => {
   return (
     <>
       <SEO />
-      <h2 className="font-mono dark:text-gray-200">RECENT POSTS</h2>
+      <h2 className="font-mono text-gray-200">RECENT POSTS</h2>
       <div className="block lg:hidden">
         <Posts posts={posts.slice(0, 2)} />
       </div>
@@ -23,7 +23,7 @@ const Index: NextPage<Props> = props => {
       </div>
       <div className="flex justify-end">
         <Link href="/blog">
-          <a className="dark:text-blue-500 dark:hover:text-orange cursor-pointer font-mono text-xl">
+          <a className="text-blue-500 hover:text-orange cursor-pointer font-mono text-xl">
             {`See more \u27f6`}
           </a>
         </Link>

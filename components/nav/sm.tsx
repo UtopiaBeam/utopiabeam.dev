@@ -27,18 +27,18 @@ const NavSm: React.FC = () => {
         </button>
       </nav>
       {isOpen && (
-        <div className="flex flex-col dark:bg-black">
+        <div className="flex flex-col bg-black">
           <Link href="/blog">
-            <a className="font-mono dark:text-gray-200 select-none cursor-pointer px-6 py-3 border-b-2 border-darkgray dark:border-gray-400/50 border-opacity-10">
+            <a className="font-mono text-gray-200 select-none cursor-pointer px-6 py-3 border-b-2 border-darkgray border-gray-400/50 border-opacity-10">
               BLOG
             </a>
           </Link>
           <Link href="/me">
-            <a className="font-mono dark:text-gray-200 select-none cursor-pointer px-6 py-3 border-b-2 border-darkgray dark:border-gray-400/50 border-opacity-10">
+            <a className="font-mono text-gray-200 select-none cursor-pointer px-6 py-3 border-b-2 border-darkgray border-gray-400/50 border-opacity-10">
               ABOUT ME
             </a>
           </Link>
-          <div className="flex justify-around px-6 py-3 border-b-2 border-darkgray dark:border-gray-400/50 border-opacity-10">
+          <div className="flex justify-around px-6 py-3 border-b-2 border-darkgray border-gray-400/50 border-opacity-10">
             <WebRing />
             <Facebook />
             <Twitch />

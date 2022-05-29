@@ -18,9 +18,9 @@ const Pagination: React.FC<Props> = ({ current, total }) => {
         href={page === 1 ? '/blog' : `/blog/page/${page}`}
       >
         <a
-          className={`dark:${
+          className={`${
             page === current ? 'text-blue-500' : 'text-gray-500'
-          } dark:hover:text-orange cursor-pointer font-mono text-xl`}
+          } hover:text-orange cursor-pointer font-mono text-xl`}
         >
           {page}
         </a>
