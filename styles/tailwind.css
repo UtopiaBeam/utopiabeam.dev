@@ -24,6 +24,17 @@
     @apply italic;
   }
 
+  a {
+    @apply text-blue-500 hover:text-orange;
+  }
+
+  img {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   li {
     @apply list-inside list-disc;
   }
@@ -71,13 +82,6 @@
       @apply text-gray-200;
     }
   /* } */
-
-  img {
-    display: block;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 @layer components {
