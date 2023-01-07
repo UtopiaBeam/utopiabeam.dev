@@ -12,6 +12,7 @@ import { unified } from 'unified'
 import SEO from '../../components/seo'
 import { iframeParser } from '../../plugins'
 import { formatDate, getPost, getPosts, Post } from '../../utils'
+import { Analytics } from '@vercel/analytics/react'
 
 interface Props {
   post: Post
@@ -42,6 +43,7 @@ const Page: React.FC<Props> = ({ post }) => {
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
+      <Analytics />
     </>
   )
 }
