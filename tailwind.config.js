@@ -14,7 +14,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Sarabun', ...defaultTheme.fontFamily.sans],
-        header: ['Athiti', ...defaultTheme.fontFamily.sans],
+        header: ['Kanit', ...defaultTheme.fontFamily.sans],
         mono: ['"Fira Code"', ...defaultTheme.fontFamily.mono],
         logo: ['"Space Mono"', ...defaultTheme.fontFamily.mono],
       },
